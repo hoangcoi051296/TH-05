@@ -10,7 +10,7 @@ class WebController extends Controller
         return view("student_listing");
     }
     public function home(){
-        return view("Layout1");
+        return view("home");
     }
 
     public function product(){
