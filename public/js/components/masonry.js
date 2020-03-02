@@ -24,14 +24,14 @@ var Masonry = function() {
 		  	this.append( $items );
 		  	$items.imagesLoaded().progress( function( imgLoad, image ) {
 			    // get item
-			    // image is imagesLoaded class, not <img>, <img> is image.img
+			    // image is imagesLoaded class, not <images>, <images> is image.images
 			    var $item = $( image.img ).parents( itemSelector );
 			    // un-hide item
 			    $item.show();
 			    // masonry does its thing
 			    msnry.appended( $item );
 		  	});
-		  
+
 		  	return this;
 		};
     }

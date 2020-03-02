@@ -1,16 +1,11 @@
 <head>
-    <meta charset="utf-8"/>
-    <title>FlameOnePage Free Template by FairTech</title>
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta content="width=device-width, initial-scale=1" name="viewport"/>
-    <meta content="FlameOnePage freebie theme for web startups by FairTech SEO." name="description"/>
-    <meta content="FairTech" name="author"/>
-    <link href="http://fonts.googleapis.com/css?family=Hind:300,400,500,600,700" rel="stylesheet" type="text/css">
-    <link href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
-    <link href="vendor/simple-line-icons/simple-line-icons.min.css" rel="stylesheet" type="text/css"/>
-    <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet" type="text/css"/>
-    <link href="css/animate.css" rel="stylesheet">
-    <link href="vendor/swiper/css/swiper.min.css" rel="stylesheet" type="text/css"/>
-    <link href="css/layout.min.css" rel="stylesheet" type="text/css"/>
-    <link rel="shortcut icon" href="favicon.ico"/>
+    <title> @yield("title")</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <link href="css/style.css" rel="stylesheet" type="text/css" media="all"/>
+    <link href="css/slider.css" rel="stylesheet" type="text/css" media="all"/>
+    <script type="text/javascript" src="js/jquery-1.7.2.min.js"></script>
+    <script type="text/javascript" src="js/move-top.js"></script>
+    <script type="text/javascript" src="js/easing.js"></script>
+    <script type="text/javascript" src="js/startstop-slider.js"></script>
 </head>

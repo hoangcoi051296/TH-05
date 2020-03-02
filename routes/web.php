@@ -28,7 +28,7 @@ Route::get("/danh-sach-lop-hoc","WebController@students");
 Route::get("/","WebController@home");
 // Route::METHOD(path_string,Controller@function_in_controller);
 Route::get("/san-pham","WebController@product");
-Route::get("/danh-muc","WebController@listing");
+Route::get("/chi-tiet-san-pham","WebController@listing");
 
 
 Route::get("/trang-chu","WebController@home1");
