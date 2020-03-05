@@ -20,7 +20,7 @@
         </div>
         <div class="header_top">
             <div class="logo">
-                <a href="/blog/public/"><img src="images/logo.png" alt="" /></a>
+                <a href="/"><img src="images/logo.png" alt="" /></a>
             </div>
             <div class="cart">
                 <p>Welcome to our Online Store! <span>Cart:</span><div id="dd" class="wrapper-dropdown-2"> 0 item(s) - $0.00
@@ -61,11 +61,11 @@
         <div class="header_bottom">
             <div class="menu">
                 <ul>
-                    <li class="active"><a href="/blog/public/">Home</a></li>
-                    <li><a href="/blog/public/about">About</a></li>
-                    <li><a href="/blog/public/delivery">Delivery</a></li>
-                    <li><a href="/blog/public/news">News</a></li>
-                    <li><a href="/blog/public/contact">Contact</a></li>
+                    <li class="active"><a href="/">Home</a></li>
+                    <li><a href="/about">About</a></li>
+                    <li><a href="/delivery">Delivery</a></li>
+                    <li><a href="/news">News</a></li>
+                    <li><a href="/contact">Contact</a></li>
                     <div class="clear"></div>
                 </ul>
             </div>
@@ -102,7 +102,7 @@
                         <div id="mover">
                             <div id="slide-1" class="slide">
                                 <div class="slider-img">
-                                    <a href="/blog/public/chi-tiet-san-pham"><img src="images/slide-1-image.png" alt="learn more" /></a>
+                                    <a href="/chi-tiet-san-pham"><img src="images/slide-1-image.png" alt="learn more" /></a>
                                 </div>
                                 <div class="slider-text">
                                     <h1>Clearance<br><span>SALE</span></h1>
@@ -110,7 +110,7 @@
                                     <div class="features_list">
                                         <h4>Get to Know More About Our Memorable Services Lorem Ipsum is simply dummy text</h4>
                                     </div>
-                                    <a href="/blog/public/chi-tiet-san-pham" class="button">Shop Now</a>
+                                    <a href="/chi-tiet-san-pham" class="button">Shop Now</a>
                                 </div>
                                 <div class="clear"></div>
                             </div>
@@ -121,16 +121,16 @@
                                     <div class="features_list">
                                         <h4>Get to Know More About Our Memorable Services</h4>
                                     </div>
-                                    <a href="/blog/public/chi-tiet-san-pham" class="button">Shop Now</a>
+                                    <a href="/chi-tiet-san-pham" class="button">Shop Now</a>
                                 </div>
                                 <div class="slider-img">
-                                    <a href="/blog/public/chi-tiet-san-pham"><img src="images/slide-3-image.jpg" alt="learn more" /></a>
+                                    <a href="/chi-tiet-san-pham"><img src="images/slide-3-image.jpg" alt="learn more" /></a>
                                 </div>
                                 <div class="clear"></div>
                             </div>
                             <div class="slide">
                                 <div class="slider-img">
-                                    <a href="/blog/public/chi-tiet-san-pham"><img src="images/slide-2-image.jpg" alt="learn more" /></a>
+                                    <a href="/chi-tiet-san-pham"><img src="images/slide-2-image.jpg" alt="learn more" /></a>
                                 </div>
                                 <div class="slider-text">
                                     <h1>Clearance<br><span>SALE</span></h1>
@@ -138,7 +138,7 @@
                                     <div class="features_list">
                                         <h4>Get to Know More About Our Memorable Services Lorem Ipsum is simply dummy text</h4>
                                     </div>
-                                    <a href="/blog/public/chi-tiet-san-pham" class="button">Shop Now</a>
+                                    <a href="/chi-tiet-san-pham" class="button">Shop Now</a>
                                 </div>
                                 <div class="clear"></div>
                             </div>
@@ -166,55 +166,55 @@
             </div>
             <div class="section group">
                 <div class="grid_1_of_4 images_1_of_4">
-                    <a href="/blog/public/chi-tiet-san-pham"><img src="images/feature-pic1.jpg" alt="" /></a>
+                    <a href="/chi-tiet-san-pham"><img src="images/feature-pic1.jpg" alt="" /></a>
                     <h2>Lorem Ipsum is simply </h2>
                     <div class="price-details">
                         <div class="price-number">
                             <p><span class="rupees">$620.87</span></p>
                         </div>
                         <div class="add-cart">
-                            <h4><a href="/blog/public/chi-tiet-san-pham">Add to Cart</a></h4>
+                            <h4><a href="/chi-tiet-san-pham">Add to Cart</a></h4>
                         </div>
                         <div class="clear"></div>
                     </div>
 
                 </div>
                 <div class="grid_1_of_4 images_1_of_4">
-                    <a href="/blog/public/chi-tiet-san-pham"><img src="images/feature-pic2.jpg" alt="" /></a>
+                    <a href="/chi-tiet-san-pham"><img src="images/feature-pic2.jpg" alt="" /></a>
                     <h2>Lorem Ipsum is simply </h2>
                     <div class="price-details">
                         <div class="price-number">
                             <p><span class="rupees">$899.75</span></p>
                         </div>
                         <div class="add-cart">
-                            <h4><a href="/blog/public/chi-tiet-san-pham">Add to Cart</a></h4>
+                            <h4><a href="/chi-tiet-san-pham">Add to Cart</a></h4>
                         </div>
                         <div class="clear"></div>
                     </div>
 
                 </div>
                 <div class="grid_1_of_4 images_1_of_4">
-                    <a href="/blog/public/chi-tiet-san-pham"><img src="images/feature-pic3.jpg" alt="" /></a>
+                    <a href="/chi-tiet-san-pham"><img src="images/feature-pic3.jpg" alt="" /></a>
                     <h2>Lorem Ipsum is simply </h2>
                     <div class="price-details">
                         <div class="price-number">
                             <p><span class="rupees">$599.00</span></p>
                         </div>
                         <div class="add-cart">
-                            <h4><a href="/blog/public/chi-tiet-san-pham">Add to Cart</a></h4>
+                            <h4><a href="/chi-tiet-san-pham">Add to Cart</a></h4>
                         </div>
                         <div class="clear"></div>
                     </div>
                 </div>
                 <div class="grid_1_of_4 images_1_of_4">
-                    <a href="/blog/public/chi-tiet-san-pham"><img src="images/feature-pic4.jpg" alt="" /></a>
+                    <a href="/chi-tiet-san-pham"><img src="images/feature-pic4.jpg" alt="" /></a>
                     <h2>Lorem Ipsum is simply </h2>
                     <div class="price-details">
                         <div class="price-number">
                             <p><span class="rupees">$679.87</span></p>
                         </div>
                         <div class="add-cart">
-                            <h4><a href="/blog/public/chi-tiet-san-pham">Add to Cart</a></h4>
+                            <h4><a href="/chi-tiet-san-pham">Add to Cart</a></h4>
                         </div>
                         <div class="clear"></div>
                     </div>
@@ -231,53 +231,53 @@
             </div>
             <div class="section group">
                 <div class="grid_1_of_4 images_1_of_4">
-                    <a href="/blog/public/chi-tiet-san-pham"><img src="images/new-pic1.jpg" alt="" /></a>
+                    <a href="/chi-tiet-san-pham"><img src="images/new-pic1.jpg" alt="" /></a>
                     <h2>Lorem Ipsum is simply </h2>
                     <div class="price-details">
                         <div class="price-number">
                             <p><span class="rupees">$849.99</span></p>
                         </div>
                         <div class="add-cart">
-                            <h4><a href="/blog/public/chi-tiet-san-pham">Add to Cart</a></h4>
+                            <h4><a href="/chi-tiet-san-pham">Add to Cart</a></h4>
                         </div>
                         <div class="clear"></div>
                     </div>
                 </div>
                 <div class="grid_1_of_4 images_1_of_4">
-                    <a href="/blog/public/chi-tiet-san-pham"><img src="images/new-pic2.jpg" alt="" /></a>
+                    <a href="/chi-tiet-san-pham"><img src="images/new-pic2.jpg" alt="" /></a>
                     <h2>Lorem Ipsum is simply </h2>
                     <div class="price-details">
                         <div class="price-number">
                             <p><span class="rupees">$599.99</span></p>
                         </div>
                         <div class="add-cart">
-                            <h4><a href="/blog/public/chi-tiet-san-pham">Add to Cart</a></h4>
+                            <h4><a href="/chi-tiet-san-pham">Add to Cart</a></h4>
                         </div>
                         <div class="clear"></div>
                     </div>
                 </div>
                 <div class="grid_1_of_4 images_1_of_4">
-                    <a href="/blog/public/chi-tiet-san-pham"><img src="images/new-pic4.jpg" alt="" /></a>
+                    <a href="/chi-tiet-san-pham"><img src="images/new-pic4.jpg" alt="" /></a>
                     <h2>Lorem Ipsum is simply </h2>
                     <div class="price-details">
                         <div class="price-number">
                             <p><span class="rupees">$799.99</span></p>
                         </div>
                         <div class="add-cart">
-                            <h4><a href="/blog/public/chi-tiet-san-pham">Add to Cart</a></h4>
+                            <h4><a href="/chi-tiet-san-pham">Add to Cart</a></h4>
                         </div>
                         <div class="clear"></div>
                     </div>
                 </div>
                 <div class="grid_1_of_4 images_1_of_4">
-                    <a href="/blog/public/chi-tiet-san-pham"><img src="images/new-pic3.jpg" alt="" /></a>
+                    <a href="/chi-tiet-san-pham"><img src="images/new-pic3.jpg" alt="" /></a>
                     <h2>Lorem Ipsum is simply </h2>
                     <div class="price-details">
                         <div class="price-number">
                             <p><span class="rupees">$899.99</span></p>
                         </div>
                         <div class="add-cart">
-                            <h4><a href="/blog/public/chi-tiet-san-pham">Add to Cart</a></h4>
+                            <h4><a href="/chi-tiet-san-pham">Add to Cart</a></h4>
                         </div>
                         <div class="clear"></div>
                     </div>

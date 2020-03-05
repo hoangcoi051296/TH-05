@@ -20,7 +20,7 @@
         </div>
         <div class="header_top">
             <div class="logo">
-                <a href="/blog/public/"><img src="images/logo.png" alt="" /></a>
+                <a href="/"><img src="images/logo.png" alt="" /></a>
             </div>
             <div class="cart">
                 <p>Welcome to our Online Store! <span>Cart:</span><div id="dd" class="wrapper-dropdown-2"> 0 item(s) - $0.00
@@ -61,11 +61,11 @@
         <div class="header_bottom">
             <div class="menu">
                 <ul>
-                    <li><a href="/blog/public/">Home</a></li>
-                    <li ><a href="/blog/public/about">About</a></li>
-                    <li><a href="/blog/public/delivery">Delivery</a></li>
-                    <li  ><a href="/blog/public/news">News</a></li>
-                    <li  class="active"><a href="/blog/public/contact">Contact</a></li>
+                    <li><a href="/">Home</a></li>
+                    <li ><a href="/about">About</a></li>
+                    <li><a href="/delivery">Delivery</a></li>
+                    <li  ><a href="/news">News</a></li>
+                    <li  class="active"><a href="/contact">Contact</a></li>
                     <div class="clear"></div>
                 </ul>
             </div>
