@@ -16,7 +16,7 @@
     </div>
     <div class="header_top">
         <div class="logo">
-            <a href="index.html"><img src="images/logo.png" alt="" /></a>
+            <a href="/blog/public/"><img src="images/logo.png" alt="" /></a>
         </div>
         <div class="cart">
             <p>Welcome to our Online Store! <span>Cart:</span><div id="dd" class="wrapper-dropdown-2"> 0 item(s) - $0.00

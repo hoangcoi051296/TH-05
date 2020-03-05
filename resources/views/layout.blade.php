@@ -3,7 +3,9 @@
 @include('html.head')
 <body id="body" data-spy="scroll" data-target=".header">
 <div class="wrap">
-    @includeIf('html.header')
+    <div class="header">
+        @yield('header')
+    </div>
     <section>
         @yield('content')
     </section>
