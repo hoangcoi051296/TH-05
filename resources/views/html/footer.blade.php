@@ -4,8 +4,8 @@
             <div class="col_1_of_4 span_1_of_4">
                 <h4>Information</h4>
                 <ul>
-                    <li><a href="/blog/public/about">About Us</a></li>
-                    <li><a href="/blog/public/contactl">Customer Service</a></li>
+                    <li><a href="about">About Us</a></li>
+                    <li><a href="contact">Customer Service</a></li>
                     <li><a href="#">Advanced Search</a></li>
                     <li><a href="/blog/public/delivery">Orders and Returns</a></li>
                     <li><a href="/blog/public/contact">Contact Us</a></li>
