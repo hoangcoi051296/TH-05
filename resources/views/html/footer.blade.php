@@ -14,7 +14,7 @@
             <div class="col_1_of_4 span_1_of_4">
                 <h4>Why buy from us</h4>
                 <ul>
-                    <li><a href="//about">About Us</a></li>
+                    <li><a href="/about">About Us</a></li>
                     <li><a href="/contact">Customer Service</a></li>
                     <li><a href="#">Privacy Policy</a></li>
                     <li><a href="/contact">Site Map</a></li>
@@ -52,6 +52,5 @@
         </div>
     </div>
     <div class="copy_right">
-        <p>&copy; 2013 home_shoppe. All rights reserved | Design by <a href="http://w3layouts.com/">W3layouts</a></p>
     </div>
 </div>
