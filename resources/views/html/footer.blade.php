@@ -7,8 +7,8 @@
                     <li><a href="about">About Us</a></li>
                     <li><a href="contact">Customer Service</a></li>
                     <li><a href="#">Advanced Search</a></li>
-                    <li><a href="/blog/public/delivery">Orders and Returns</a></li>
-                    <li><a href="/blog/public/contact">Contact Us</a></li>
+                    <li><a href="/delivery">Orders and Returns</a></li>
+                    <li><a href="/contact">Contact Us</a></li>
                 </ul>
             </div>
             <div class="col_1_of_4 span_1_of_4">
