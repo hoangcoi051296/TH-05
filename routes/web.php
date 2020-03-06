@@ -27,7 +27,7 @@ Route::get('/xin-chao',function (){
 Route::get("/danh-sach-lop-hoc","WebController@students");
 Route::get("/","WebController@home");
 // Route::METHOD(path_string,Controller@function_in_controller);
-Route::get("/san-pham","WebController@product");
+Route::get("/san-pham/{id}","WebController@product");
 Route::get("/news","WebController@news");
 Route::get("/about","WebController@about");
 Route::get("/delivery","WebController@delivery");
