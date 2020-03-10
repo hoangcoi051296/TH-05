@@ -1,6 +1,8 @@
 @extends('layout')
 
 @section('title',"Chi tiết sản phẩm")
+<link rel="stylesheet" type="text/css" href="styles/product.css">
+<link rel="stylesheet" type="text/css" href="styles/product_responsive.css">
 @section('content')
     <!-- Home -->
 

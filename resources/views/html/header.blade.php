@@ -13,7 +13,7 @@
                                         <li><a href="/san-pham">Product</a></li>
                                         <li><a href="/chi-tiet-san-pham">Product View</a></li>
                                         <li><a href="/gio-hang">Cart</a></li>
-                                        <li><a href="/checkout">Check out</a></li>
+                                        <li><a href="/check-out">Check out</a></li>
                                         <li><a href="/contact">Contact</a></li>
                                     </ul>
                                 </li>

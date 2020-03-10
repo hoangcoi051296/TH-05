@@ -1,9 +1,9 @@
 @extends('layout')
 
-@section('title',"Trang chủ")
+@section('title',"Sản phẩm")
+<link rel="stylesheet" type="text/css" href="styles/main_styles.css">
+<link rel="stylesheet" type="text/css" href="styles/responsive.css">
 @section('content')
-    <!-- Home -->
-
     <div class="home">
         <div class="home_slider_container">
 

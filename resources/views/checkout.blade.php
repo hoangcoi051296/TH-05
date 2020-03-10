@@ -1,6 +1,8 @@
 @extends('layout')
 
 @section('title',"Check out")
+<link rel="stylesheet" type="text/css" href="styles/checkout.css">
+<link rel="stylesheet" type="text/css" href="styles/checkout_responsive.css">
 @section('content')
     <div class="home">
         <div class="home_container">

@@ -1,7 +1,10 @@
 @extends('layout')
 
 @section('title',"Sản phẩm")
+<link rel="stylesheet" type="text/css" href="styles/categories.css">
+<link rel="stylesheet" type="text/css" href="styles/categories_responsive.css">
 @section('content')
+
     <div class="home">
         <div class="home_container">
             <div class="home_background" style="background-image:url(images/categories.jpg)"></div>

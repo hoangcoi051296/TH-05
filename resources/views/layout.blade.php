@@ -4,9 +4,9 @@
 <body >
 <div class="super_container">
 @include('html.header')
-    <section>
-        @yield('content')
-    </section>
+
+    @yield('content')
+
 
     @includeIf("html.footer")
 
