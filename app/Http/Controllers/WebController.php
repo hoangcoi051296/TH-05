@@ -39,14 +39,11 @@ class WebController extends Controller
     }
 //
 //
-//    public function listing($id){
-//        $product=Product::where("category_id",$id)->take(20)->orderby('create_at','desc')->get();//loc theo category
-//        return view("product_view",['product'=>$product]);
-//    }
     public function listing(){
-
-        return view("product");
+        $product=Product::where("category_id")->take(12)->orderby('create_at','desc')->get();//loc theo category
+        return view("product",['product'=>$product]);
     }
+
     public function shopping(){
 
         return view("cart");
