@@ -1,11 +1,24 @@
 <head>
-    <title> @yield("title")</title>
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-    <link href="css/style.css" rel="stylesheet" type="text/css" media="all"/>
-    <link href="css/slider.css" rel="stylesheet" type="text/css" media="all"/>
-    <script type="text/javascript" src="js/jquery-1.7.2.min.js"></script>
-    <script type="text/javascript" src="js/move-top.js"></script>
-    <script type="text/javascript" src="js/easing.js"></script>
-    <script type="text/javascript" src="js/startstop-slider.js"></script>
+    <title>@yield('title')</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description" content="Sublime project">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="styles/bootstrap4/bootstrap.min.css">
+    <link href="plugins/font-awesome-4.7.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" type="text/css" href="plugins/OwlCarousel2-2.2.1/owl.carousel.css">
+    <link rel="stylesheet" type="text/css" href="plugins/OwlCarousel2-2.2.1/owl.theme.default.css">
+    <link rel="stylesheet" type="text/css" href="plugins/OwlCarousel2-2.2.1/animate.css">
+    <link rel="stylesheet" type="text/css" href="styles/main_styles.css">
+    <link rel="stylesheet" type="text/css" href="styles/responsive.css">
+    <link rel="stylesheet" type="text/css" href="styles/cart.css">
+    <link rel="stylesheet" type="text/css" href="styles/cart_responsive.css">
+    <link rel="stylesheet" type="text/css" href="styles/categories.css">
+    <link rel="stylesheet" type="text/css" href="styles/categories_responsive.css">
+    <link rel="stylesheet" type="text/css" href="styles/product.css">
+    <link rel="stylesheet" type="text/css" href="styles/product_responsive.css">
+    <link rel="stylesheet" type="text/css" href="styles/contact.css">
+    <link rel="stylesheet" type="text/css" href="styles/contact_responsive.css">
+    <link rel="stylesheet" type="text/css" href="styles/checkout.css">
+    <link rel="stylesheet" type="text/css" href="styles/checkout_responsive.css">
 </head>

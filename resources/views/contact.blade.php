@@ -1,133 +1,115 @@
 @extends('layout')
 
-@section('title',"About")
-@section('header')
-    <div class="header">
-        <div class="headertop_desc">
-            <div class="call">
-                <p><span>Need help?</span> call us <span class="number">1-22-3456789</span></p>
-            </div>
-            <div class="account_desc">
-                <ul>
-                    <li><a href="#">Register</a></li>
-                    <li><a href="#">Login</a></li>
-                    <li><a href="#">Delivery</a></li>
-                    <li><a href="#">Checkout</a></li>
-                    <li><a href="#">My Account</a></li>
-                </ul>
-            </div>
-            <div class="clear"></div>
-        </div>
-        <div class="header_top">
-            <div class="logo">
-                <a href="/"><img src="images/logo.png" alt="" /></a>
-            </div>
-            <div class="cart">
-                <p>Welcome to our Online Store! <span>Cart:</span><div id="dd" class="wrapper-dropdown-2"> 0 item(s) - $0.00
-                    <ul class="dropdown">
-                        <li>you have no items in your Shopping cart</li>
-                    </ul></div>
-            </div>
-            <script type="text/javascript">
-                function DropDown(el) {
-                    this.dd = el;
-                    this.initEvents();
-                }
-                DropDown.prototype = {
-                    initEvents : function() {
-                        var obj = this;
-
-                        obj.dd.on('click', function(event){
-                            $(this).toggleClass('active');
-                            event.stopPropagation();
-                        });
-                    }
-                }
-
-                $(function() {
-
-                    var dd = new DropDown( $('#dd') );
-
-                    $(document).click(function() {
-                        // all dropdowns
-                        $('.wrapper-dropdown-2').removeClass('active');
-                    });
-
-                });
-
-            </script>
-            <div class="clear"></div>
-        </div>
-        <div class="header_bottom">
-            <div class="menu">
-                <ul>
-                    <li><a href="/">Home</a></li>
-                    <li ><a href="/about">About</a></li>
-                    <li><a href="/delivery">Delivery</a></li>
-                    <li  ><a href="/news">News</a></li>
-                    <li  class="active"><a href="/contact">Contact</a></li>
-                    <div class="clear"></div>
-                </ul>
-            </div>
-            <div class="search_box">
-                <form>
-                    <input type="text" value="Search" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Search';}"><input type="submit" value="">
-                </form>
-            </div>
-            <div class="clear"></div>
-        </div>
-    </div>
-@endsection
+@section('title',"Liên hệ")
 @section('content')
+    <!-- Home -->
 
-    <div class="content">
-        <div class="section group">
-            <div class="col span_2_of_3">
-                <div class="contact-form">
-                    <h2>Contact Us</h2>
-                    <form>
-                        <div>
-                            <span><label>Name</label></span>
-                            <span><input type="text" class="textbox" ></span>
+    <!-- Home -->
+
+    <div class="home">
+        <div class="home_container">
+            <div class="home_background" style="background-image:url(images/contact.jpg)"></div>
+            <div class="home_content_container">
+                <div class="container">
+                    <div class="row">
+                        <div class="col">
+                            <div class="home_content">
+                                <div class="breadcrumbs">
+                                    <ul>
+                                        <li><a href="index.html">Home</a></li>
+                                        <li>Contact</li>
+                                    </ul>
+                                </div>
+                            </div>
                         </div>
-                        <div>
-                            <span><label>E-mail</label></span>
-                            <span><input type="text" class="textbox"></span>
-                        </div>
-                        <div>
-                            <span><label>Company Name</label></span>
-                            <span><input type="text" class="textbox"></span>
-                        </div>
-                        <div>
-                            <span><label>Subject</label></span>
-                            <span><textarea> </textarea></span>
-                        </div>
-                        <div>
-                            <span><input type="submit" value="Submit"  class="myButton"></span>
-                        </div>
-                    </form>
-                </div>
-            </div>
-            <div class="col span_1_of_3">
-                <div class="contact_info">
-                    <h3>Find Us Here</h3>
-                    <div class="map">
-                        <iframe width="100%" height="175" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://maps.google.co.in/maps?f=q&amp;source=s_q&amp;hl=en&amp;geocode=&amp;q=Lighthouse+Point,+FL,+United+States&amp;aq=4&amp;oq=light&amp;sll=26.275636,-80.087265&amp;sspn=0.04941,0.104628&amp;ie=UTF8&amp;hq=&amp;hnear=Lighthouse+Point,+Broward,+Florida,+United+States&amp;t=m&amp;z=14&amp;ll=26.275636,-80.087265&amp;output=embed"></iframe><br><small><a href="https://maps.google.co.in/maps?f=q&amp;source=embed&amp;hl=en&amp;geocode=&amp;q=Lighthouse+Point,+FL,+United+States&amp;aq=4&amp;oq=light&amp;sll=26.275636,-80.087265&amp;sspn=0.04941,0.104628&amp;ie=UTF8&amp;hq=&amp;hnear=Lighthouse+Point,+Broward,+Florida,+United+States&amp;t=m&amp;z=14&amp;ll=26.275636,-80.087265" style="color:#666;text-align:left;font-size:12px">View Larger Map</a></small>
                     </div>
                 </div>
-                <div class="company_address">
-                    <h3>Company Information :</h3>
-                    <p>500 Lorem Ipsum Dolor Sit,</p>
-                    <p>22-56-2-9 Sit Amet, Lorem,</p>
-                    <p>USA</p>
-                    <p>Phone:(00) 222 666 444</p>
-                    <p>Fax: (000) 000 00 00 0</p>
-                    <p>Email: <span><a href="mailto:@example.com">info@mycompany.com</a></span></p>
-                    <p>Follow on: <span>Facebook</span>, <span>Twitter</span></p>
-                </div>
             </div>
         </div>
     </div>
 
+    <!-- Contact -->
+
+    <div class="contact">
+        <div class="container">
+            <div class="row">
+
+                <!-- Get in touch -->
+                <div class="col-lg-8 contact_col">
+                    <div class="get_in_touch">
+                        <div class="section_title">Get in Touch</div>
+                        <div class="section_subtitle">Say hello</div>
+                        <div class="contact_form_container">
+                            <form action="#" id="contact_form" class="contact_form">
+                                <div class="row">
+                                    <div class="col-xl-6">
+                                        <!-- Name -->
+                                        <label for="contact_name">First Name*</label>
+                                        <input type="text" id="contact_name" class="contact_input" required="required">
+                                    </div>
+                                    <div class="col-xl-6 last_name_col">
+                                        <!-- Last Name -->
+                                        <label for="contact_last_name">Last Name*</label>
+                                        <input type="text" id="contact_last_name" class="contact_input" required="required">
+                                    </div>
+                                </div>
+                                <div>
+                                    <!-- Subject -->
+                                    <label for="contact_company">Subject</label>
+                                    <input type="text" id="contact_company" class="contact_input">
+                                </div>
+                                <div>
+                                    <label for="contact_textarea">Message*</label>
+                                    <textarea id="contact_textarea" class="contact_input contact_textarea" required="required"></textarea>
+                                </div>
+                                <button class="button contact_button"><span>Send Message</span></button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Contact Info -->
+                <div class="col-lg-3 offset-xl-1 contact_col">
+                    <div class="contact_info">
+                        <div class="contact_info_section">
+                            <div class="contact_info_title">Marketing</div>
+                            <ul>
+                                <li>Phone: <span>+53 345 7953 3245</span></li>
+                                <li>Email: <span>yourmail@gmail.com</span></li>
+                            </ul>
+                        </div>
+                        <div class="contact_info_section">
+                            <div class="contact_info_title">Shippiing & Returns</div>
+                            <ul>
+                                <li>Phone: <span>+53 345 7953 3245</span></li>
+                                <li>Email: <span>yourmail@gmail.com</span></li>
+                            </ul>
+                        </div>
+                        <div class="contact_info_section">
+                            <div class="contact_info_title">Information</div>
+                            <ul>
+                                <li>Phone: <span>+53 345 7953 3245</span></li>
+                                <li>Email: <span>yourmail@gmail.com</span></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row map_row">
+                <div class="col">
+
+                    <!-- Google Map -->
+                    <div class="map">
+                        <div id="google_map" class="google_map">
+                            <div class="map_container">
+                                <div id="map"></div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
 
 @endsection

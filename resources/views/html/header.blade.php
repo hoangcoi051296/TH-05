@@ -1,148 +1,154 @@
-<div class="header">
-    <div class="headertop_desc">
-        <div class="call">
-            <p><span>Need help?</span> call us <span class="number">1-22-3456789</span></p>
-        </div>
-        <div class="account_desc">
-            <ul>
-                <li><a href="#">Register</a></li>
-                <li><a href="#">Login</a></li>
-                <li><a href="#">Delivery</a></li>
-                <li><a href="#">Checkout</a></li>
-                <li><a href="#">My Account</a></li>
-            </ul>
-        </div>
-        <div class="clear"></div>
-    </div>
-    <div class="header_top">
-        <div class="logo">
-            <a href="/blog/public/"><img src="images/logo.png" alt="" /></a>
-        </div>
-        <div class="cart">
-            <p>Welcome to our Online Store! <span>Cart:</span><div id="dd" class="wrapper-dropdown-2"> 0 item(s) - $0.00
-                <ul class="dropdown">
-                    <li>you have no items in your Shopping cart</li>
-                </ul></div>
-        </div>
-        <script type="text/javascript">
-            function DropDown(el) {
-                this.dd = el;
-                this.initEvents();
-            }
-            DropDown.prototype = {
-                initEvents : function() {
-                    var obj = this;
-
-                    obj.dd.on('click', function(event){
-                        $(this).toggleClass('active');
-                        event.stopPropagation();
-                    });
-                }
-            }
-
-            $(function() {
-
-                var dd = new DropDown( $('#dd') );
-
-                $(document).click(function() {
-                    // all dropdowns
-                    $('.wrapper-dropdown-2').removeClass('active');
-                });
-
-            });
-
-        </script>
-        <div class="clear"></div>
-    </div>
-    <div class="header_bottom">
-        <div class="menu">
-            <ul>
-                <li class="active"><a href="index.html">Home</a></li>
-                <li><a href="about.html">About</a></li>
-                <li><a href="delivery.html">Delivery</a></li>
-                <li><a href="news.html">News</a></li>
-                <li><a href="contact.html">Contact</a></li>
-                <div class="clear"></div>
-            </ul>
-        </div>
-        <div class="search_box">
-            <form>
-                <input type="text" value="Search" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Search';}"><input type="submit" value="">
-            </form>
-        </div>
-        <div class="clear"></div>
-    </div>
-    <div class="header_slide">
-        <div class="header_bottom_left">
-            <div class="categories">
-                <ul>
-                    <h3>Categories</h3>
-                    <li><a href="#">Mobile Phones</a></li>
-                    <li><a href="#">Desktop</a></li>
-                    <li><a href="#">Laptop</a></li>
-                    <li><a href="#">Accessories</a></li>
-                    <li><a href="#">Software</a></li>
-                    <li><a href="#">Sports &amp; Fitness</a></li>
-                    <li><a href="#">Footwear</a></li>
-                    <li><a href="#">Jewellery</a></li>
-                    <li><a href="#">Clothing</a></li>
-                    <li><a href="#">Home Decor &amp; Kitchen</a></li>
-                    <li><a href="#">Beauty &amp; Healthcare</a></li>
-                    <li><a href="#">Toys, Kids &amp; Babies</a></li>
-                </ul>
-            </div>
-        </div>
-        <div class="header_bottom_right">
-            <div class="slider">
-                <div id="slider">
-                    <div id="mover">
-                        <div id="slide-1" class="slide">
-                            <div class="slider-img">
-                                <a href="preview.html"><img src="images/slide-1-image.png" alt="learn more" /></a>
+<header class="header">
+    <div class="header_container">
+        <div class="container">
+            <div class="row">
+                <div class="col">
+                    <div class="header_content d-flex flex-row align-items-center justify-content-start">
+                        <div class="logo"><a href="/">Th05.</a></div>
+                        <nav class="main_nav">
+                            <ul>
+                                <li class="hassubs active">
+                                    <a href="/">Home</a>
+                                    <ul>
+                                        <li><a href="/san-pham">Product</a></li>
+                                        <li><a href="/chi-tiet-san-pham">Product View</a></li>
+                                        <li><a href="/gio-hang">Cart</a></li>
+                                        <li><a href="/checkout">Check out</a></li>
+                                        <li><a href="/contact">Contact</a></li>
+                                    </ul>
+                                </li>
+                                <li class="hassubs">
+                                    <a href="/san-pham">Product</a>
+                                    <ul>
+                                        <li><a href="#">Category</a></li>
+                                        <li><a href="#">Category</a></li>
+                                        <li><a href="#">Category</a></li>
+                                        <li><a href="#">Category</a></li>
+                                        <li><a href="#">Category</a></li>
+                                    </ul>
+                                </li>
+                                <li><a href="#">Accessories</a></li>
+                                <li><a href="#">Offers</a></li>
+                                <li><a href="/contact">Contact</a></li>
+                            </ul>
+                        </nav>
+                        <div class="header_extra ml-auto">
+                            <div class="shopping_cart">
+                                <a href="/cart">
+                                    <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+                                         viewBox="0 0 489 489" style="enable-background:new 0 0 489 489;" xml:space="preserve">
+											<g>
+                                                <path d="M440.1,422.7l-28-315.3c-0.6-7-6.5-12.3-13.4-12.3h-57.6C340.3,42.5,297.3,0,244.5,0s-95.8,42.5-96.6,95.1H90.3
+													c-7,0-12.8,5.3-13.4,12.3l-28,315.3c0,0.4-0.1,0.8-0.1,1.2c0,35.9,32.9,65.1,73.4,65.1h244.6c40.5,0,73.4-29.2,73.4-65.1
+													C440.2,423.5,440.2,423.1,440.1,422.7z M244.5,27c37.9,0,68.8,30.4,69.6,68.1H174.9C175.7,57.4,206.6,27,244.5,27z M366.8,462
+													H122.2c-25.4,0-46-16.8-46.4-37.5l26.8-302.3h45.2v41c0,7.5,6,13.5,13.5,13.5s13.5-6,13.5-13.5v-41h139.3v41
+													c0,7.5,6,13.5,13.5,13.5s13.5-6,13.5-13.5v-41h45.2l26.9,302.3C412.8,445.2,392.1,462,366.8,462z"/>
+                                            </g>
+										</svg>
+                                    <div>Cart <span>(0)</span></div>
+                                </a>
                             </div>
-                            <div class="slider-text">
-                                <h1>Clearance<br><span>SALE</span></h1>
-                                <h2>UPTo 20% OFF</h2>
-                                <div class="features_list">
-                                    <h4>Get to Know More About Our Memorable Services Lorem Ipsum is simply dummy text</h4>
+                            <div class="search">
+                                <div class="search_icon">
+                                    <svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+                                         viewBox="0 0 475.084 475.084" style="enable-background:new 0 0 475.084 475.084;"
+                                         xml:space="preserve">
+										<g>
+                                            <path d="M464.524,412.846l-97.929-97.925c23.6-34.068,35.406-72.047,35.406-113.917c0-27.218-5.284-53.249-15.852-78.087
+												c-10.561-24.842-24.838-46.254-42.825-64.241c-17.987-17.987-39.396-32.264-64.233-42.826
+												C254.246,5.285,228.217,0.003,200.999,0.003c-27.216,0-53.247,5.282-78.085,15.847C98.072,26.412,76.66,40.689,58.673,58.676
+												c-17.989,17.987-32.264,39.403-42.827,64.241C5.282,147.758,0,173.786,0,201.004c0,27.216,5.282,53.238,15.846,78.083
+												c10.562,24.838,24.838,46.247,42.827,64.234c17.987,17.993,39.403,32.264,64.241,42.832c24.841,10.563,50.869,15.844,78.085,15.844
+												c41.879,0,79.852-11.807,113.922-35.405l97.929,97.641c6.852,7.231,15.406,10.849,25.693,10.849
+												c9.897,0,18.467-3.617,25.694-10.849c7.23-7.23,10.848-15.796,10.848-25.693C475.088,428.458,471.567,419.889,464.524,412.846z
+												 M291.363,291.358c-25.029,25.033-55.148,37.549-90.364,37.549c-35.21,0-65.329-12.519-90.36-37.549
+												c-25.031-25.029-37.546-55.144-37.546-90.36c0-35.21,12.518-65.334,37.546-90.36c25.026-25.032,55.15-37.546,90.36-37.546
+												c35.212,0,65.331,12.519,90.364,37.546c25.033,25.026,37.548,55.15,37.548,90.36C328.911,236.214,316.392,266.329,291.363,291.358z
+												"/>
+                                        </g>
+									</svg>
                                 </div>
-                                <a href="preview.html" class="button">Shop Now</a>
                             </div>
-                            <div class="clear"></div>
-                        </div>
-                        <div class="slide">
-                            <div class="slider-text">
-                                <h1>Clearance<br><span>SALE</span></h1>
-                                <h2>UPTo 40% OFF</h2>
-                                <div class="features_list">
-                                    <h4>Get to Know More About Our Memorable Services</h4>
-                                </div>
-                                <a href="preview.html" class="button">Shop Now</a>
-                            </div>
-                            <div class="slider-img">
-                                <a href="preview.html"><img src="images/slide-3-image.jpg" alt="learn more" /></a>
-                            </div>
-                            <div class="clear"></div>
-                        </div>
-                        <div class="slide">
-                            <div class="slider-img">
-                                <a href="preview.html"><img src="images/slide-2-image.jpg" alt="learn more" /></a>
-                            </div>
-                            <div class="slider-text">
-                                <h1>Clearance<br><span>SALE</span></h1>
-                                <h2>UPTo 10% OFF</h2>
-                                <div class="features_list">
-                                    <h4>Get to Know More About Our Memorable Services Lorem Ipsum is simply dummy text</h4>
-                                </div>
-                                <a href="preview.html" class="button">Shop Now</a>
-                            </div>
-                            <div class="clear"></div>
+                            <div class="hamburger"><i class="fa fa-bars" aria-hidden="true"></i></div>
                         </div>
                     </div>
                 </div>
-                <div class="clear"></div>
             </div>
         </div>
-        <div class="clear"></div>
+    </div>
+
+    <!-- Search Panel -->
+    <div class="search_panel trans_300">
+        <div class="container">
+            <div class="row">
+                <div class="col">
+                    <div class="search_panel_content d-flex flex-row align-items-center justify-content-end">
+                        <form action="#">
+                            <input type="text" class="search_input" placeholder="Search" required="required">
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Social -->
+    <div class="header_social">
+        <ul>
+            <li><a href="#"><i class="fa fa-pinterest" aria-hidden="true"></i></a></li>
+            <li><a href="#"><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
+            <li><a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
+            <li><a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
+        </ul>
+    </div>
+</header>
+
+<!-- Menu -->
+
+<div class="menu menu_mm trans_300">
+    <div class="menu_container menu_mm">
+        <div class="page_menu_content">
+
+            <div class="page_menu_search menu_mm">
+                <form action="#">
+                    <input type="search" required="required" class="page_menu_search_input menu_mm" placeholder="Search for products...">
+                </form>
+            </div>
+            <ul class="page_menu_nav menu_mm">
+                <li class="page_menu_item has-children menu_mm">
+                    <a href="index.html">Home<i class="fa fa-angle-down"></i></a>
+                    <ul class="page_menu_selection menu_mm">
+                        <li class="page_menu_item menu_mm"><a href="categories.html">Categories<i class="fa fa-angle-down"></i></a></li>
+                        <li class="page_menu_item menu_mm"><a href="product.html">Product<i class="fa fa-angle-down"></i></a></li>
+                        <li class="page_menu_item menu_mm"><a href="cart.html">Cart<i class="fa fa-angle-down"></i></a></li>
+                        <li class="page_menu_item menu_mm"><a href="checkout.html">Checkout<i class="fa fa-angle-down"></i></a></li>
+                        <li class="page_menu_item menu_mm"><a href="contact.html">Contact<i class="fa fa-angle-down"></i></a></li>
+                    </ul>
+                </li>
+                <li class="page_menu_item has-children menu_mm">
+                    <a href="categories.html">Categories<i class="fa fa-angle-down"></i></a>
+                    <ul class="page_menu_selection menu_mm">
+                        <li class="page_menu_item menu_mm"><a href="categories.html">Category<i class="fa fa-angle-down"></i></a></li>
+                        <li class="page_menu_item menu_mm"><a href="categories.html">Category<i class="fa fa-angle-down"></i></a></li>
+                        <li class="page_menu_item menu_mm"><a href="categories.html">Category<i class="fa fa-angle-down"></i></a></li>
+                        <li class="page_menu_item menu_mm"><a href="categories.html">Category<i class="fa fa-angle-down"></i></a></li>
+                    </ul>
+                </li>
+                <li class="page_menu_item menu_mm"><a href="index.html">Accessories<i class="fa fa-angle-down"></i></a></li>
+                <li class="page_menu_item menu_mm"><a href="#">Offers<i class="fa fa-angle-down"></i></a></li>
+                <li class="page_menu_item menu_mm"><a href="contact.html">Contact<i class="fa fa-angle-down"></i></a></li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="menu_close"><i class="fa fa-times" aria-hidden="true"></i></div>
+
+    <div class="menu_social">
+        <ul>
+            <li><a href="#"><i class="fa fa-pinterest" aria-hidden="true"></i></a></li>
+            <li><a href="#"><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
+            <li><a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
+            <li><a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
+        </ul>
     </div>
 </div>

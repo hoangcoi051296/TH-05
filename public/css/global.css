@@ -45,12 +45,12 @@
 	z-index:101;
 }
 #products .prev {
-	background:url(../images/arrow-prev.png);
+	background:url(../img/arrow-prev.png);
 }
 
 #products .next {
 	left:350px;
-	background:url(../images/arrow-next.png);
+	background:url(../img/arrow-next.png);
 }
 
 /*****Pagination********/
@@ -101,14 +101,14 @@
    }
 }
 @media only screen and (max-width: 991px) {
-		
+
 	#products .pagination li {
 		margin: 2px 12.6px;
 	}
 	#products .next {
 		left: 474px;
 	}
-	
+
 }
 @media only screen and (max-width: 900px) {
 	#products .pagination li {
@@ -140,8 +140,8 @@
 		padding: 7px 16px;
 		font-size: 0.97em;
 	}
-	
-	
+
+
 }
 @media only screen and (max-width: 736px) {
 	#products .slides_container {
@@ -185,7 +185,7 @@
 	}
 }
 @media only screen and (max-width:375px) {
-	
+
 	#products .pagination li a {
 		width: 49px;
 	}

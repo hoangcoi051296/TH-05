@@ -1,259 +1,300 @@
 @extends('layout')
 
 @section('title',"Trang chủ")
-@section('header')
-    <div class="header">
-        <div class="headertop_desc">
-            <div class="call">
-                <p><span>Need help?</span> call us <span class="number">1-22-3456789</span></p>
-            </div>
-            <div class="account_desc">
-                <ul>
-                    <li><a href="#">Register</a></li>
-                    <li><a href="#">Login</a></li>
-                    <li><a href="#">Delivery</a></li>
-                    <li><a href="#">Checkout</a></li>
-                    <li><a href="#">My Account</a></li>
-                </ul>
-            </div>
-            <div class="clear"></div>
-        </div>
-        <div class="header_top">
-            <div class="logo">
-                <a href="/"><img src="images/logo.png" alt="" /></a>
-            </div>
-            <div class="cart">
-                <p>Welcome to our Online Store! <span>Cart:</span><div id="dd" class="wrapper-dropdown-2"> 0 item(s) - $0.00
-                    <ul class="dropdown">
-                        <li>you have no items in your Shopping cart</li>
-                    </ul></div>
-            </div>
-            <script type="text/javascript">
-                function DropDown(el) {
-                    this.dd = el;
-                    this.initEvents();
-                }
-                DropDown.prototype = {
-                    initEvents : function() {
-                        var obj = this;
+@section('content')
+    <!-- Home -->
 
-                        obj.dd.on('click', function(event){
-                            $(this).toggleClass('active');
-                            event.stopPropagation();
-                        });
-                    }
-                }
+    <div class="home">
+        <div class="home_slider_container">
 
-                $(function() {
+            <!-- Home Slider -->
+            <div class="owl-carousel owl-theme home_slider">
 
-                    var dd = new DropDown( $('#dd') );
-
-                    $(document).click(function() {
-                        // all dropdowns
-                        $('.wrapper-dropdown-2').removeClass('active');
-                    });
-
-                });
-
-            </script>
-            <div class="clear"></div>
-        </div>
-        <div class="header_bottom">
-            <div class="menu">
-                <ul>
-                    <li class="active"><a href="/">Home</a></li>
-                    <li><a href="/about">About</a></li>
-                    <li><a href="/delivery">Delivery</a></li>
-                    <li><a href="/news">News</a></li>
-                    <li><a href="/contact">Contact</a></li>
-                    <div class="clear"></div>
-                </ul>
-            </div>
-            <div class="search_box">
-                <form>
-                    <input type="text" value="Search" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Search';}"><input type="submit" value="">
-                </form>
-            </div>
-            <div class="clear"></div>
-        </div>
-        <div class="header_slide">
-            <div class="header_bottom_left">
-                <div class="categories">
-                    <ul>
-                        <h3>Categories</h3>
-                        <li><a href="#">Mobile Phones</a></li>
-                        <li><a href="#">Desktop</a></li>
-                        <li><a href="#">Laptop</a></li>
-                        <li><a href="#">Accessories</a></li>
-                        <li><a href="#">Software</a></li>
-                        <li><a href="#">Sports &amp; Fitness</a></li>
-                        <li><a href="#">Footwear</a></li>
-                        <li><a href="#">Jewellery</a></li>
-                        <li><a href="#">Clothing</a></li>
-                        <li><a href="#">Home Decor &amp; Kitchen</a></li>
-                        <li><a href="#">Beauty &amp; Healthcare</a></li>
-                        <li><a href="#">Toys, Kids &amp; Babies</a></li>
-                    </ul>
-                </div>
-            </div>
-            <div class="header_bottom_right">
-                <div class="slider">
-                    <div id="slider">
-                        <div id="mover">
-                            <div id="slide-1" class="slide">
-                                <div class="slider-img">
-                                    <a href="/chi-tiet-san-pham"><img src="images/slide-1-image.png" alt="learn more" /></a>
-                                </div>
-                                <div class="slider-text">
-                                    <h1>Clearance<br><span>SALE</span></h1>
-                                    <h2>UPTo 20% OFF</h2>
-                                    <div class="features_list">
-                                        <h4>Get to Know More About Our Memorable Services Lorem Ipsum is simply dummy text</h4>
+                <!-- Slider Item -->
+                <div class="owl-item home_slider_item">
+                    <div class="home_slider_background" style="background-image:url(images/home_slider_1.jpg)"></div>
+                    <div class="home_slider_content_container">
+                        <div class="container">
+                            <div class="row">
+                                <div class="col">
+                                    <div class="home_slider_content"  data-animation-in="fadeIn" data-animation-out="animate-out fadeOut">
+                                        <div class="home_slider_title">A new Online Shop experience.</div>
+                                        <div class="home_slider_subtitle">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam a ultricies metus. Sed nec molestie eros. Sed viverra velit venenatis fermentum luctus.</div>
+                                        <div class="button button_light home_button"><a href="#">Shop Now</a></div>
                                     </div>
-                                    <a href="/chi-tiet-san-pham" class="button">Shop Now</a>
                                 </div>
-                                <div class="clear"></div>
-                            </div>
-                            <div class="slide">
-                                <div class="slider-text">
-                                    <h1>Clearance<br><span>SALE</span></h1>
-                                    <h2>UPTo 40% OFF</h2>
-                                    <div class="features_list">
-                                        <h4>Get to Know More About Our Memorable Services</h4>
-                                    </div>
-                                    <a href="/chi-tiet-san-pham" class="button">Shop Now</a>
-                                </div>
-                                <div class="slider-img">
-                                    <a href="/chi-tiet-san-pham"><img src="images/slide-3-image.jpg" alt="learn more" /></a>
-                                </div>
-                                <div class="clear"></div>
-                            </div>
-                            <div class="slide">
-                                <div class="slider-img">
-                                    <a href="/chi-tiet-san-pham"><img src="images/slide-2-image.jpg" alt="learn more" /></a>
-                                </div>
-                                <div class="slider-text">
-                                    <h1>Clearance<br><span>SALE</span></h1>
-                                    <h2>UPTo 10% OFF</h2>
-                                    <div class="features_list">
-                                        <h4>Get to Know More About Our Memorable Services Lorem Ipsum is simply dummy text</h4>
-                                    </div>
-                                    <a href="/chi-tiet-san-pham" class="button">Shop Now</a>
-                                </div>
-                                <div class="clear"></div>
                             </div>
                         </div>
                     </div>
-                    <div class="clear"></div>
+                </div>
+
+                <!-- Slider Item -->
+                <div class="owl-item home_slider_item">
+                    <div class="home_slider_background" style="background-image:url(images/home_slider_1.jpg)"></div>
+                    <div class="home_slider_content_container">
+                        <div class="container">
+                            <div class="row">
+                                <div class="col">
+                                    <div class="home_slider_content"  data-animation-in="fadeIn" data-animation-out="animate-out fadeOut">
+                                        <div class="home_slider_title">A new Online Shop experience.</div>
+                                        <div class="home_slider_subtitle">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam a ultricies metus. Sed nec molestie eros. Sed viverra velit venenatis fermentum luctus.</div>
+                                        <div class="button button_light home_button"><a href="#">Shop Now</a></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Slider Item -->
+                <div class="owl-item home_slider_item">
+                    <div class="home_slider_background" style="background-image:url(images/home_slider_1.jpg)"></div>
+                    <div class="home_slider_content_container">
+                        <div class="container">
+                            <div class="row">
+                                <div class="col">
+                                    <div class="home_slider_content"  data-animation-in="fadeIn" data-animation-out="animate-out fadeOut">
+                                        <div class="home_slider_title">A new Online Shop experience.</div>
+                                        <div class="home_slider_subtitle">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam a ultricies metus. Sed nec molestie eros. Sed viverra velit venenatis fermentum luctus.</div>
+                                        <div class="button button_light home_button"><a href="#">Shop Now</a></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- Home Slider Dots -->
+
+            <div class="home_slider_dots_container">
+                <div class="container">
+                    <div class="row">
+                        <div class="col">
+                            <div class="home_slider_dots">
+                                <ul id="home_slider_custom_dots" class="home_slider_custom_dots">
+                                    <li class="home_slider_custom_dot active">01.</li>
+                                    <li class="home_slider_custom_dot">02.</li>
+                                    <li class="home_slider_custom_dot">03.</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
-            <div class="clear"></div>
+
         </div>
     </div>
 
-@endsection
-@section('content')
-    <div class="main">
-        <div class="content">
-            <div class="content_top">
-                <div class="heading">
-                    <h3>New Products</h3>
-                </div>
-                <div class="see">
-                    <p><a href="#">See all Products</a></p>
-                </div>
-                <div class="clear"></div>
-            </div>
-            <div class="section group">
-                <div class="section group">
-                    @foreach ($newest as $p)
-                        <div class="grid_1_of_4 images_1_of_4">
-                            <a href="/chi-tiet-san-pham"><img src={{$p->thumnail}} alt="" /></a>
-                            <h2>Lorem Ipsum is simply </h2>
-                            <div class="price-details">
-                                <div class="price-number">
-                                    <p><span class="rupees">{{$p->price}}</span></p>
-                                </div>
-                                <div class="add-cart">
-                                    <h4><a href="/chi-tiet-san-pham">Add to Cart</a></h4>
-                                </div>
-                                <div class="clear"></div>
+    <!-- Ads -->
+
+    <div class="avds">
+        <div class="avds_container d-flex flex-lg-row flex-column align-items-start justify-content-between">
+            <div class="avds_small">
+                <div class="avds_background" style="background-image:url(images/avds_small.jpg)"></div>
+                <div class="avds_small_inner">
+                    <div class="avds_discount_container">
+                        <img src="images/discount.png" alt="">
+                        <div>
+                            <div class="avds_discount">
+                                <div>20<span>%</span></div>
+                                <div>Discount</div>
                             </div>
-
                         </div>
-                    @endforeach
+                    </div>
+                    <div class="avds_small_content">
+                        <div class="avds_title">Smart Phones</div>
+                        <div class="avds_link"><a href="categories.html">See More</a></div>
+                    </div>
+                </div>
+            </div>
+            <div class="avds_large">
+                <div class="avds_background" style="background-image:url(images/avds_large.jpg)"></div>
+                <div class="avds_large_container">
+                    <div class="avds_large_content">
+                        <div class="avds_title">Professional Cameras</div>
+                        <div class="avds_text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam a ultricies metus. Sed nec molestie eros. Sed viver ra velit venenatis fermentum luctus.</div>
+                        <div class="avds_link avds_link_large"><a href="categories.html">See More</a></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 
+    <!-- Products -->
 
+    <div class="products">
+        <div class="container">
+            <div class="row">
+                <div class="col">
 
+                    <div class="product_grid">
+
+                        <!-- Product -->
+                        <div class="product">
+                            <div class="product_image"><img src="images/product_1.jpg" alt=""></div>
+                            <div class="product_extra product_new"><a href="categories.html">New</a></div>
+                            <div class="product_content">
+                                <div class="product_title"><a href="product.html">Smart Phone</a></div>
+                                <div class="product_price">$670</div>
+                            </div>
+                        </div>
+
+                        <!-- Product -->
+                        <div class="product">
+                            <div class="product_image"><img src="images/product_2.jpg" alt=""></div>
+                            <div class="product_extra product_sale"><a href="categories.html">Sale</a></div>
+                            <div class="product_content">
+                                <div class="product_title"><a href="product.html">Smart Phone</a></div>
+                                <div class="product_price">$670</div>
+                            </div>
+                        </div>
+
+                        <!-- Product -->
+                        <div class="product">
+                            <div class="product_image"><img src="images/product_3.jpg" alt=""></div>
+                            <div class="product_content">
+                                <div class="product_title"><a href="product.html">Smart Phone</a></div>
+                                <div class="product_price">$670</div>
+                            </div>
+                        </div>
+
+                        <!-- Product -->
+                        <div class="product">
+                            <div class="product_image"><img src="images/product_4.jpg" alt=""></div>
+                            <div class="product_content">
+                                <div class="product_title"><a href="product.html">Smart Phone</a></div>
+                                <div class="product_price">$670</div>
+                            </div>
+                        </div>
+
+                        <!-- Product -->
+                        <div class="product">
+                            <div class="product_image"><img src="images/product_5.jpg" alt=""></div>
+                            <div class="product_content">
+                                <div class="product_title"><a href="product.html">Smart Phone</a></div>
+                                <div class="product_price">$670</div>
+                            </div>
+                        </div>
+
+                        <!-- Product -->
+                        <div class="product">
+                            <div class="product_image"><img src="images/product_6.jpg" alt=""></div>
+                            <div class="product_extra product_hot"><a href="categories.html">Hot</a></div>
+                            <div class="product_content">
+                                <div class="product_title"><a href="product.html">Smart Phone</a></div>
+                                <div class="product_price">$670</div>
+                            </div>
+                        </div>
+
+                        <!-- Product -->
+                        <div class="product">
+                            <div class="product_image"><img src="images/product_7.jpg" alt=""></div>
+                            <div class="product_content">
+                                <div class="product_title"><a href="product.html">Smart Phone</a></div>
+                                <div class="product_price">$670</div>
+                            </div>
+                        </div>
+
+                        <!-- Product -->
+                        <div class="product">
+                            <div class="product_image"><img src="images/product_8.jpg" alt=""></div>
+                            <div class="product_extra product_sale"><a href="categories.html">Hot</a></div>
+                            <div class="product_content">
+                                <div class="product_title"><a href="product.html">Smart Phone</a></div>
+                                <div class="product_price">$670</div>
+                            </div>
+                        </div>
+
+                    </div>
 
                 </div>
             </div>
         </div>
-        <div class="content">
-            <div class="content_top">
-                <div class="heading">
-                    <h3>New Products</h3>
-                </div>
-                <div class="see">
-                    <p><a href="#">See all Products</a></p>
-                </div>
-                <div class="clear"></div>
-            </div>
-            <div class="section group">
-                <div class="section group">
-                    @foreach ($cheaps as $p)
-                        <div class="grid_1_of_4 images_1_of_4">
-                            <a href="/chi-tiet-san-pham"><img src={{$p->thumnail}} alt="" /></a>
-                            <h2>Lorem Ipsum is simply </h2>
-                            <div class="price-details">
-                                <div class="price-number">
-                                    <p><span class="rupees">{{$p->price}}</span></p>
-                                </div>
-                                <div class="add-cart">
-                                    <h4><a href="/chi-tiet-san-pham">Add to Cart</a></h4>
-                                </div>
-                                <div class="clear"></div>
-                            </div>
+    </div>
 
+    <!-- Ad -->
+
+    <div class="avds_xl">
+        <div class="container">
+            <div class="row">
+                <div class="col">
+                    <div class="avds_xl_container clearfix">
+                        <div class="avds_xl_background" style="background-image:url(images/avds_xl.jpg)"></div>
+                        <div class="avds_xl_content">
+                            <div class="avds_title">Amazing Devices</div>
+                            <div class="avds_text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam a ultricies metus.</div>
+                            <div class="avds_link avds_xl_link"><a href="categories.html">See More</a></div>
                         </div>
-                    @endforeach
-
-
-
-
-                </div>
-                <div class="content">
-                    <div class="content_top">
-                        <div class="heading">
-                            <h3>New Products</h3>
-                        </div>
-                        <div class="see">
-                            <p><a href="#">See all Products</a></p>
-                        </div>
-                        <div class="clear"></div>
                     </div>
-                    <div class="section group">
-                        <div class="section group">
-                            @foreach ($exs as $p)
-                                <div class="grid_1_of_4 images_1_of_4">
-                                    <a href="/chi-tiet-san-pham"><img src={{$p->thumnail}} alt="" /></a>
-                                    <h2>Lorem Ipsum is simply </h2>
-                                    <div class="price-details">
-                                        <div class="price-number">
-                                            <p><span class="rupees">{{$p->price}}</span></p>
-                                        </div>
-                                        <div class="add-cart">
-                                            <h4><a href="/chi-tiet-san-pham">Add to Cart</a></h4>
-                                        </div>
-                                        <div class="clear"></div>
-                                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 
-                                </div>
-                            @endforeach
+    <!-- Icon Boxes -->
 
+    <div class="icon_boxes">
+        <div class="container">
+            <div class="row icon_box_row">
 
+                <!-- Icon Box -->
+                <div class="col-lg-4 icon_box_col">
+                    <div class="icon_box">
+                        <div class="icon_box_image"><img src="images/icon_1.svg" alt=""></div>
+                        <div class="icon_box_title">Free Shipping Worldwide</div>
+                        <div class="icon_box_text">
+                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam a ultricies metus. Sed nec molestie.</p>
+                        </div>
+                    </div>
+                </div>
 
+                <!-- Icon Box -->
+                <div class="col-lg-4 icon_box_col">
+                    <div class="icon_box">
+                        <div class="icon_box_image"><img src="images/icon_2.svg" alt=""></div>
+                        <div class="icon_box_title">Free Returns</div>
+                        <div class="icon_box_text">
+                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam a ultricies metus. Sed nec molestie.</p>
+                        </div>
+                    </div>
+                </div>
 
+                <!-- Icon Box -->
+                <div class="col-lg-4 icon_box_col">
+                    <div class="icon_box">
+                        <div class="icon_box_image"><img src="images/icon_3.svg" alt=""></div>
+                        <div class="icon_box_title">24h Fast Support</div>
+                        <div class="icon_box_text">
+                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam a ultricies metus. Sed nec molestie.</p>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <!-- Newsletter -->
+
+    <div class="newsletter">
+        <div class="container">
+            <div class="row">
+                <div class="col">
+                    <div class="newsletter_border"></div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-8 offset-lg-2">
+                    <div class="newsletter_content text-center">
+                        <div class="newsletter_title">Subscribe to our newsletter</div>
+                        <div class="newsletter_text"><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam a ultricies metus. Sed nec molestie eros</p></div>
+                        <div class="newsletter_form_container">
+                            <form action="#" id="newsletter_form" class="newsletter_form">
+                                <input type="email" class="newsletter_input" required="required">
+                                <button class="newsletter_button trans_200"><span>Subscribe</span></button>
+                            </form>
                         </div>
                     </div>
                 </div>

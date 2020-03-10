@@ -40,7 +40,7 @@ $factory->define(\App\Product::class, function (Faker $faker){
         'product_name' => $faker->unique()->name,
         'product_desc' => $faker->title,
         'thumnail'=>$faker->imageUrl(),
-        'gallery'=>$faker->imageUrl(),
+        'gallery'=>$faker->imageUrl().','.$faker->imageUrl().','.$faker->imageUrl(),
         'price'=>random_int(1,1000),
         'quantity'=>random_int(1,100),
         'category_id'=>random_int(1,5),

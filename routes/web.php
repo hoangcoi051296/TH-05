@@ -27,12 +27,12 @@ Route::get('/xin-chao',function (){
 Route::get("/danh-sach-lop-hoc","WebController@students");
 Route::get("/","WebController@home");
 // Route::METHOD(path_string,Controller@function_in_controller);
-Route::get("/san-pham/{id}","WebController@product");
-Route::get("/news","WebController@news");
-Route::get("/about","WebController@about");
-Route::get("/delivery","WebController@delivery");
+Route::get("/san-pham","WebController@listing");
+Route::get("/chi-tiet-san-pham/","WebController@product");
+Route::get("/check-out","WebController@checkout");
+Route::get("/gio-hang/","WebController@shopping");
 Route::get("/contact","WebController@contact");
-Route::get("/chi-tiet-san-pham","WebController@listing");
+//Route::get("/shopping/{id}","WebController@shopping");
 
 
 Route::get("/trang-chu","WebController@home1");

@@ -1,56 +1,25 @@
-<div class="footer">
-    <div class="wrap">
-        <div class="section group">
-            <div class="col_1_of_4 span_1_of_4">
-                <h4>Information</h4>
-                <ul>
-                    <li><a href="/about">About Us</a></li>
-                    <li><a href="/contact">Customer Service</a></li>
-                    <li><a href="#">Advanced Search</a></li>
-                    <li><a href="/delivery">Orders and Returns</a></li>
-                    <li><a href="/contact">Contact Us</a></li>
-                </ul>
-            </div>
-            <div class="col_1_of_4 span_1_of_4">
-                <h4>Why buy from us</h4>
-                <ul>
-                    <li><a href="/about">About Us</a></li>
-                    <li><a href="/contact">Customer Service</a></li>
-                    <li><a href="#">Privacy Policy</a></li>
-                    <li><a href="/contact">Site Map</a></li>
-                    <li><a href="#">Search Terms</a></li>
-                </ul>
-            </div>
-            <div class="col_1_of_4 span_1_of_4">
-                <h4>My account</h4>
-                <ul>
-                    <li><a href="/contact">Sign In</a></li>
-                    <li><a href="/">View Cart</a></li>
-                    <li><a href="#">My Wishlist</a></li>
-                    <li><a href="#">Track My Order</a></li>
-                    <li><a href="/contact">Help</a></li>
-                </ul>
-            </div>
-            <div class="col_1_of_4 span_1_of_4">
-                <h4>Contact</h4>
-                <ul>
-                    <li><span>+91-123-456789</span></li>
-                    <li><span>+00-123-000000</span></li>
-                </ul>
-                <div class="social-icons">
-                    <h4>Follow Us</h4>
-                    <ul>
-                        <li><a href="#" target="_blank"><img src="images/facebook.png" alt="" /></a></li>
-                        <li><a href="#" target="_blank"><img src="images/twitter.png" alt="" /></a></li>
-                        <li><a href="#" target="_blank"><img src="images/skype.png" alt="" /> </a></li>
-                        <li><a href="#" target="_blank"> <img src="images/dribbble.png" alt="" /></a></li>
-                        <li><a href="#" target="_blank"> <img src="images/linkedin.png" alt="" /></a></li>
-                        <div class="clear"></div>
-                    </ul>
+
+<div class="footer_overlay"></div>
+<footer class="footer">
+    <div class="footer_background" style="background-image:url(images/footer.jpg)"></div>
+    <div class="container">
+        <div class="row">
+            <div class="col">
+                <div class="footer_content d-flex flex-lg-row flex-column align-items-center justify-content-lg-start justify-content-center">
+                    <div class="footer_logo"><a href="#">Th05.</a></div>
+                    <div class="copyright ml-auto mr-auto">
+                        Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="fa fa-heart-o" aria-hidden="true"></i> by <a href="https://www.facebook.com/thaihoangdo.05" target="_blank">Th05.</a>
+                        </div>
+                    <div class="footer_social ml-lg-auto">
+                        <ul>
+                            <li><a href="#"><i class="fa fa-pinterest" aria-hidden="true"></i></a></li>
+                            <li><a href="#"><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
+                            <li><a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
+                            <li><a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
+                        </ul>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
-    <div class="copy_right">
-    </div>
-</div>
+</footer>
