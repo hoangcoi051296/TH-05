@@ -40,7 +40,7 @@ class WebController extends Controller
 //
 //
     public function listing(){
-        $product=Product::where("category_id")->take(12)->orderby('create_at','desc')->get();//loc theo category
+        $product=Product::where("category_id",5)->take(12)->orderby('create_at','desc')->get();//loc theo category
         return view("product",['product'=>$product]);
     }
 
