@@ -1,6 +1,6 @@
 @extends('layout')
 
-@section('title',"Sản phẩm")
+@section('title',"Trang chủ")
 <link rel="stylesheet" type="text/css" href="styles/main_styles.css">
 <link rel="stylesheet" type="text/css" href="styles/responsive.css">
 @section('content')
