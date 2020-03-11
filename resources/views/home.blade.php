@@ -105,7 +105,7 @@
                     </div>
                     <div class="avds_small_content">
                         <div class="avds_title">Smart Phones</div>
-                        <div class="avds_link"><a href="categories.html">See More</a></div>
+                        <div class="avds_link"><a href="/chi-tiet-san-pham">See More</a></div>
                     </div>
                 </div>
             </div>
@@ -115,7 +115,7 @@
                     <div class="avds_large_content">
                         <div class="avds_title">Professional Cameras</div>
                         <div class="avds_text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam a ultricies metus. Sed nec molestie eros. Sed viver ra velit venenatis fermentum luctus.</div>
-                        <div class="avds_link avds_link_large"><a href="categories.html">See More</a></div>
+                        <div class="avds_link avds_link_large"><a href="/chi-tiet-san-pham">See More</a></div>
                     </div>
                 </div>
             </div>
@@ -128,89 +128,53 @@
         <div class="container">
             <div class="row">
                 <div class="col">
-
+                    <h2>Sản phẩm mới nhất</h2>
                     <div class="product_grid">
-
-                        <!-- Product -->
-                        <div class="product">
-                            <div class="product_image"><img src="images/product_1.jpg" alt=""></div>
-                            <div class="product_extra product_new"><a href="categories.html">New</a></div>
-                            <div class="product_content">
-                                <div class="product_title"><a href="product.html">Smart Phone</a></div>
-                                <div class="product_price">$670</div>
+                        @foreach($newest as $p)
+                            <div class="product" style="position: absolute;left: 0px;top: 50px;">
+                                <div class="product_image"><img src="{{asset($p->thumnail)}}" alt=""></div>
+                                <div class="product_content">
+                                    <div class="product_title"><a href="{{url("san-pham/{$p->id}")}}">{{$p->product_name}}</a></div>
+                                    <div class="product_price">{{$p->price}}</div>
+                                </div>
                             </div>
-                        </div>
-
-                        <!-- Product -->
-                        <div class="product">
-                            <div class="product_image"><img src="images/product_2.jpg" alt=""></div>
-                            <div class="product_extra product_sale"><a href="categories.html">Sale</a></div>
-                            <div class="product_content">
-                                <div class="product_title"><a href="product.html">Smart Phone</a></div>
-                                <div class="product_price">$670</div>
-                            </div>
-                        </div>
-
-                        <!-- Product -->
-                        <div class="product">
-                            <div class="product_image"><img src="images/product_3.jpg" alt=""></div>
-                            <div class="product_content">
-                                <div class="product_title"><a href="product.html">Smart Phone</a></div>
-                                <div class="product_price">$670</div>
-                            </div>
-                        </div>
-
-                        <!-- Product -->
-                        <div class="product">
-                            <div class="product_image"><img src="images/product_4.jpg" alt=""></div>
-                            <div class="product_content">
-                                <div class="product_title"><a href="product.html">Smart Phone</a></div>
-                                <div class="product_price">$670</div>
-                            </div>
-                        </div>
-
-                        <!-- Product -->
-                        <div class="product">
-                            <div class="product_image"><img src="images/product_5.jpg" alt=""></div>
-                            <div class="product_content">
-                                <div class="product_title"><a href="product.html">Smart Phone</a></div>
-                                <div class="product_price">$670</div>
-                            </div>
-                        </div>
-
-                        <!-- Product -->
-                        <div class="product">
-                            <div class="product_image"><img src="images/product_6.jpg" alt=""></div>
-                            <div class="product_extra product_hot"><a href="categories.html">Hot</a></div>
-                            <div class="product_content">
-                                <div class="product_title"><a href="product.html">Smart Phone</a></div>
-                                <div class="product_price">$670</div>
-                            </div>
-                        </div>
-
-                        <!-- Product -->
-                        <div class="product">
-                            <div class="product_image"><img src="images/product_7.jpg" alt=""></div>
-                            <div class="product_content">
-                                <div class="product_title"><a href="product.html">Smart Phone</a></div>
-                                <div class="product_price">$670</div>
-                            </div>
-                        </div>
-
-                        <!-- Product -->
-                        <div class="product">
-                            <div class="product_image"><img src="images/product_8.jpg" alt=""></div>
-                            <div class="product_extra product_sale"><a href="categories.html">Hot</a></div>
-                            <div class="product_content">
-                                <div class="product_title"><a href="product.html">Smart Phone</a></div>
-                                <div class="product_price">$670</div>
-                            </div>
-                        </div>
-
+                        @endforeach
                     </div>
-
                 </div>
             </div>
+            <div class="row">
+                <div class="col">
+                    <h2>Sản phẩm rẻ nhất</h2>
+                    <div class="product_grid">
+                        @foreach($cheaps as $p)
+                            <div class="product">
+                                <div class="product_image"><img src="{{asset($p->thumnail)}}" alt=""></div>
+                                <div class="product_content">
+                                    <div class="product_title"><a href="/chi-tiet-san-pham">{{$p->product_name}}</a></div>
+                                    <div class="product_price">{{$p->price}}</div>
+                                </div>
+                            </div>
+                        @endforeach
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col">
+                    <h2>Sản phẩm đắt nhất</h2>
+                    <div class="product_grid">
+                        @foreach($exs as $p)
+                            <div class="product" >
+                                <div class="product_image"><img src="{{asset($p->thumnail)}}" alt=""></div>
+                                <div class="product_content">
+                                    <div class="product_title"><a href="/chi-tiet-san-pham">{{$p->product_name}}</a></div>
+                                    <div class="product_price">{{$p->price}}</div>
+                                </div>
+                            </div>
+                        @endforeach
+                    </div>
+                </div>
+            </div>
+
         </div>
     </div>
 
@@ -225,7 +189,7 @@
                         <div class="avds_xl_content">
                             <div class="avds_title">Amazing Devices</div>
                             <div class="avds_text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam a ultricies metus.</div>
-                            <div class="avds_link avds_xl_link"><a href="categories.html">See More</a></div>
+                            <div class="avds_link avds_xl_link"><a href="/chi-tiet-san-pham">See More</a></div>
                         </div>
                     </div>
                 </div>

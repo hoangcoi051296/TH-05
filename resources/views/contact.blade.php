@@ -1,8 +1,8 @@
 @extends('layout')
 
 @section('title',"Liên hệ")
-<link rel="stylesheet" type="text/css" href="styles/contact.css">
-<link rel="stylesheet" type="text/css" href="styles/contact_responsive.css">
+<link rel="stylesheet" type="text/css" href={{asset("styles/contact.css")}}>
+<link rel="stylesheet" type="text/css" href={{asset("styles/contact_responsive.css")}}>
 @section('content')
     <!-- Home -->
 

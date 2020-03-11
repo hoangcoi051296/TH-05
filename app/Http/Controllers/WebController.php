@@ -8,19 +8,18 @@ use Illuminate\Http\Request;
 class WebController extends Controller
 {
     public function home(){
-//        $newest =Product::orderBy('created_at','desc')->take(3)->get();
-//        $cheaps =Product::orderBy('price','asc')->take(3)->get();
-//        $exs =Product::orderBy('price','desc')->take(3)->get();
-//        return view("home",['newest'=>$newest,'cheaps'=>$cheaps,'exs'=>$exs]);
-        return view("home");
+        $newest =Product::orderBy('created_at','desc')->take(4)->get();
+        $cheaps =Product::orderBy('price','asc')->take(4)->get();
+        $exs =Product::orderBy('price','desc')->take(4)->get();
+        return view("home",['newest'=>$newest,'cheaps'=>$cheaps,'exs'=>$exs]);
     }
 
-    public function product(){
-//        $product=Product::find(1);//tra ve 1 object product theo id
-//        $category_product =Product::where("category_id",$product->category_id)->where('id'."!=",$product->id)->take(10)->get();
-//        $brand_product =Product::where("brand_id",$product->brand_id)->where('id'."!=",$product->id)->take(10)->get();
-//        return view('product',['product'=>$product,'category_product'=>$category_product,'brand_product'=>$brand_product]);
-        return view('product_view');
+    public function product($id){
+        $product=Product::find($id);//tra ve 1 object product theo id
+        $category_product =Product::where("category_id",$product->category_id)->where('id',"!=",$product->id)->take(10)->get();
+
+        $brand_product =Product::where("brand_id",$product->brand_id)->where('id',"!=",$product->id)->take(10)->get();
+        return view('product',['product'=>$product,'category_product'=>$category_product,'brand_product'=>$brand_product]);
     }
 //    public function news(){
 //        return view("news");
@@ -39,9 +38,9 @@ class WebController extends Controller
     }
 //
 //
-    public function listing(){
-        $product=Product::where("category_id",5)->take(12)->orderby('create_at','desc')->get();//loc theo category
-        return view("product",['product'=>$product]);
+    public function listing($id){
+        $product=Product::where("category_id",$id)->take(8)->orderby('created_at','asc')->get();//loc theo category
+        return view("listing",['products'=>$product]);
     }
 
     public function shopping(){

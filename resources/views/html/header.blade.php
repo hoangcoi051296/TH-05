@@ -10,21 +10,19 @@
                                 <li class="hassubs active">
                                     <a href="/">Home</a>
                                     <ul>
-                                        <li><a href="/san-pham">Product</a></li>
-                                        <li><a href="/chi-tiet-san-pham">Product View</a></li>
-                                        <li><a href="/gio-hang">Cart</a></li>
-                                        <li><a href="/check-out">Check out</a></li>
-                                        <li><a href="/contact">Contact</a></li>
+                                        <li><a href="{{url("/san-pham")}}">Product</a></li>
+                                        <li><a href="{{url("/chi-tiet-san-pham")}}">Product View</a></li>
+                                        <li><a href="{{url("/gio-hang")}}">Cart</a></li>
+                                        <li><a href="{{url("/check-out")}}">Check out</a></li>
+                                        <li><a href="{{url("/contact")}}">Contact</a></li>
                                     </ul>
                                 </li>
                                 <li class="hassubs">
-                                    <a href="/san-pham">Product</a>
+                                    <a href="#">Product</a>
                                     <ul>
-                                        <li><a href="#">Category</a></li>
-                                        <li><a href="#">Category</a></li>
-                                        <li><a href="#">Category</a></li>
-                                        <li><a href="#">Category</a></li>
-                                        <li><a href="#">Category</a></li>
+                                        @foreach(\App\Category::all() as $c)
+                                        <li><a href="{{url("/danh-muc/{$c->id}")}}">{{$c->category_name}}</a></li>
+                                            @endforeach
                                     </ul>
                                 </li>
                                 <li><a href="#">Accessories</a></li>
@@ -128,10 +126,9 @@
                 <li class="page_menu_item has-children menu_mm">
                     <a href="categories.html">Categories<i class="fa fa-angle-down"></i></a>
                     <ul class="page_menu_selection menu_mm">
-                        <li class="page_menu_item menu_mm"><a href="categories.html">Category<i class="fa fa-angle-down"></i></a></li>
-                        <li class="page_menu_item menu_mm"><a href="categories.html">Category<i class="fa fa-angle-down"></i></a></li>
-                        <li class="page_menu_item menu_mm"><a href="categories.html">Category<i class="fa fa-angle-down"></i></a></li>
-                        <li class="page_menu_item menu_mm"><a href="categories.html">Category<i class="fa fa-angle-down"></i></a></li>
+                        @foreach(\App\Category::all() as $c)
+                            <li class="page_menu_item menu_mm"><a href="{{url("/danh-muc/{$c->id}")}}">{{$c->category_name}}</a></li>
+                        @endforeach
                     </ul>
                 </li>
                 <li class="page_menu_item menu_mm"><a href="index.html">Accessories<i class="fa fa-angle-down"></i></a></li>
