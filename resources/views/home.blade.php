@@ -1,8 +1,8 @@
 @extends('layout')
 
 @section('title',"Trang chủ")
-<link rel="stylesheet" type="text/css" href="styles/main_styles.css">
-<link rel="stylesheet" type="text/css" href="styles/responsive.css">
+<link rel="stylesheet" type="text/css" href="{{asset("styles/main_styles.css")}}">
+<link rel="stylesheet" type="text/css" href="{{asset("styles/responsive.css")}}">
 @section('content')
     <div class="home">
         <div class="home_slider_container">
