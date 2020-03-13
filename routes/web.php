@@ -10,7 +10,10 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
-
+//Route for admin
+Route :: prefix("admin")->group(function (){
+    include_once ("admin.php");
+});
 Route::get('/', function () {
     return view('welcome');
 });
