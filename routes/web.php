@@ -37,4 +37,8 @@ Route::get("/contact","WebController@contact");
 //Route::get("/shopping/{id}","WebController@shopping");
 
 
-Route::get("/trang-chu","WebController@home1");
+
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
