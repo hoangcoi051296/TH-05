@@ -66,11 +66,11 @@ return [
         'pgsql' => [
             'driver' => 'pgsql',
             'url' => env('DATABASE_URL'),
-            'host' =>env('DB_HOST', '127.0.0.1'), "ec2-184-72-235-159.compute-1.amazonaws.com",//
+            'host' =>"ec2-3-231-46-238.compute-1.amazonaws.com",//env('DB_HOST', '127.0.0.1'),//
             'port' =>env('DB_PORT', '5432'),5432,//
-            'database' => "d1k0ih6v70tbef",//env('DB_DATABASE', 'forge'),//
-            'username' =>"yifjxjutxmtwhl" ,// env('DB_USERNAME', 'forge'),//
-            'password' => "fed36a63912f0aafa30dbf07faa1a3a3cb7c3d59948fa01c3a0aadeee6ba0dbb",//env('DB_PASSWORD', ''),//
+            'database' => "d2jtmdft884egd",//env('DB_DATABASE', 'forge'),//
+            'username' => "lezwydnloobxao" ,//env('DB_USERNAME', 'forge'),//
+            'password' =>"199241b5fb55f4454075e58b995405435da37b84baeed99f85ace1924082ffcf",// env('DB_PASSWORD', ''),//
             'charset' => 'utf8',
             'prefix' => '',
             'prefix_indexes' => true,
