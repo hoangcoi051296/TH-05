@@ -51,21 +51,19 @@
                         </div>
                         <div class="form-group has-success">
                             <label for="cc-name" class="control-label mb-1">Danh mục</label>
-                            <input id="cc-name" name="category_id" type="text" value="{{old("category_id")}}"
-                                   class="form-control cc-name @if($errors->has("category_id"))is-invalid @endif" >
-                            <span class="help-block field-validation-valid"></span>
-                            @if($errors->has("category_id"))
-                                <p style="color:red">{{$errors->first("category_id")}}</p>
-                            @endif
+                           <select name="category_id" class="browser-default custom-select">
+                               @foreach($categories as $c)
+                                   <option value="{{$c->id}}">{{$c->category_name}}</option>
+                                   @endforeach
+                           </select>
                         </div>
                         <div class="form-group has-success">
                             <label for="cc-name" class="control-label mb-1">Thương hiệu</label>
-                            <input id="cc-name" name="brand_id" type="text" value="{{old("brand_id")}}"
-                                   class="form-control cc-name @if($errors->has("brand_id"))is-invalid @endif" >
-                            <span class="help-block field-validation-valid"></span>
-                            @if($errors->has("brand_id"))
-                                <p style="color:red">{{$errors->first("brand_id")}}</p>
-                            @endif
+                            <select name="brand_id" class="browser-default custom-select">
+                                @foreach($brand as $c)
+                                    <option  value="{{$c->id}}">{{$c->brand_name}}</option>
+                                @endforeach
+                            </select>
                         </div>
                         <div class="form-group has-success">
                             <label for="cc-name" class="control-label mb-1">Giá</label>

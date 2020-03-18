@@ -5,12 +5,37 @@ namespace App\Http\Controllers;
 use App\Brand;
 use App\Category;
 use App\Product;
+use App\User;
 use Illuminate\Http\Request;
 
 class AdminController extends Controller
 {
     public function admin(){
         return view('admin.index');
+    }
+
+    public function user(){
+        $users=User::all();
+        return view('admin.user.index',['users'=>$users]);
+    }
+    public function userEdit($id){
+        $users = User::find($id);
+        return view ("admin.user.edit",['users'=>$users]);
+    }
+    public function userUpdate($id,Request $request){
+        $users = User::find($id);
+        $request->validate([
+            "role"=> "required|boolean"  // validation laravel
+        ]);
+        try {
+            $users->update([
+                "role"=>$request->get('role')
+            ]);
+
+        }catch (\Exception $e){
+            return redirect()->back();
+        }
+        return redirect()->to("admin/user");
     }
 
     public function category(){
@@ -62,7 +87,9 @@ class AdminController extends Controller
         return view('admin.product.index',['products'=>$products]);
     }
     public function productCreate(){
-        return view("admin.product.create");
+        $brand=Brand::all();
+        $categories=Category::all();
+        return view("admin.product.create",['categories'=>$categories],['brand'=>$brand]);
     }
     public function productStore(Request $request){
         $request->validate([ // truyen vao rules de validate

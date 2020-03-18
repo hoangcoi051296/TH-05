@@ -11,7 +11,7 @@
 |
 */
 //Route for admin
-Route :: prefix("admin")->group(function (){
+Route :: prefix("admin")->middleware("check_admin")->group(function (){
     include_once ("admin.php");
 });
 Route::get('/', function () {
@@ -41,4 +41,8 @@ Route::get("/contact","WebController@contact");
 
 Auth::routes();
 
-Route::get('/home', 'HomeController@index')->name('home');
+//Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/logout',function (){
+   \Illuminate\Support\Facades\Auth::logout();
+   return redirect()->to("/login");
+});

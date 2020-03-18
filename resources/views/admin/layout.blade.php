@@ -143,6 +143,9 @@
                             <li>
                                 <a href={{url("admin/product")}}>Product</a>
                             </li>
+                            <li>
+                                <a href={{url("admin/user")}}>User</a>
+                            </li>
                         </ul>
                     </li>
                     <li>
