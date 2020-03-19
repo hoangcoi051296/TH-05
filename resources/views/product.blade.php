@@ -8,7 +8,7 @@
 
     <div class="home">
         <div class="home_container">
-            <div class="home_background" style="background-image:{{asset("images/categories.jpg")}}"></div>
+            <div class="home_background" style="background-image:url({{asset("images/categories.jpg")}})"></div>
             <div class="home_content_container">
                 <div class="container">
                     <div class="row">
@@ -113,44 +113,17 @@
                 <div class="col">
 
                     <div class="product_grid">
-
+                    @foreach($category_product as $p)
                         <!-- Product -->
                         <div class="product">
-                            <div class="product_image"><img src="images/product_1.jpg" alt=""></div>
-                            <div class="product_extra product_new"><a href="categories.html">New</a></div>
+                            <div class="product_image"><img src="{{$p->thumbnail}}" alt=""></div>
                             <div class="product_content">
-                                <div class="product_title"><a href="product.html">Smart Phone</a></div>
-                                <div class="product_price">$670</div>
+                                <div class="product_title"><a href="{{url("san-pham/{$p->id}")}}">{{$p->product_name}}</a></div>
+                                <div class="product_price">{{$p->price}}</div>
                             </div>
                         </div>
-
                         <!-- Product -->
-                        <div class="product">
-                            <div class="product_image"><img src="images/product_2.jpg" alt=""></div>
-                            <div class="product_extra product_sale"><a href="categories.html">Sale</a></div>
-                            <div class="product_content">
-                                <div class="product_title"><a href="product.html">Smart Phone</a></div>
-                                <div class="product_price">$520</div>
-                            </div>
-                        </div>
-
-                        <!-- Product -->
-                        <div class="product">
-                            <div class="product_image"><img src="images/product_3.jpg" alt=""></div>
-                            <div class="product_content">
-                                <div class="product_title"><a href="product.html">Smart Phone</a></div>
-                                <div class="product_price">$710</div>
-                            </div>
-                        </div>
-
-                        <!-- Product -->
-                        <div class="product">
-                            <div class="product_image"><img src="images/product_4.jpg" alt=""></div>
-                            <div class="product_content">
-                                <div class="product_title"><a href="product.html">Smart Phone</a></div>
-                                <div class="product_price">$330</div>
-                            </div>
-                        </div>
+                    @endforeach
 
                     </div>
                 </div>

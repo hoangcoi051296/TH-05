@@ -29,7 +29,7 @@
 
                 <!-- Slider Item -->
                 <div class="owl-item home_slider_item">
-                    <div class="home_slider_background" style="background-image:url({{asset("images/home_slider_1.jpg")}})"></div>
+                    <div class="home_slider_background" style="background-color:red"></div>
                     <div class="home_slider_content_container">
                         <div class="container">
                             <div class="row">
@@ -104,7 +104,7 @@
                     </div>
                     <div class="avds_small_content">
                         <div class="avds_title">Smart Phones</div>
-                        <div class="avds_link"><a href="/chi-tiet-san-pham">See More</a></div>
+                        <div class="avds_link"><a href="#">See More</a></div>
                     </div>
                 </div>
             </div>
@@ -114,7 +114,7 @@
                     <div class="avds_large_content">
                         <div class="avds_title">Professional Cameras</div>
                         <div class="avds_text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam a ultricies metus. Sed nec molestie eros. Sed viver ra velit venenatis fermentum luctus.</div>
-                        <div class="avds_link avds_link_large"><a href="/chi-tiet-san-pham">See More</a></div>
+                        <div class="avds_link avds_link_large"><a href="#">See More</a></div>
                     </div>
                 </div>
             </div>
@@ -149,7 +149,7 @@
                             <div class="product">
                                 <div class="product_image"><img src="{{asset($p->thumnail)}}" alt=""></div>
                                 <div class="product_content">
-                                    <div class="product_title"><a href="/chi-tiet-san-pham">{{$p->product_name}}</a></div>
+                                    <div class="product_title"><a href="{{url("san-pham/{$p->id}")}}">{{$p->product_name}}</a></div>
                                     <div class="product_price">{{$p->price}}</div>
                                 </div>
                             </div>
@@ -165,7 +165,7 @@
                             <div class="product" >
                                 <div class="product_image"><img src="{{asset($p->thumnail)}}" alt=""></div>
                                 <div class="product_content">
-                                    <div class="product_title"><a href="/chi-tiet-san-pham">{{$p->product_name}}</a></div>
+                                    <div class="product_title"><a href="{{url("san-pham/{$p->id}")}}">{{$p->product_name}}</a></div>
                                     <div class="product_price">{{$p->price}}</div>
                                 </div>
                             </div>
@@ -188,7 +188,7 @@
                         <div class="avds_xl_content">
                             <div class="avds_title">Amazing Devices</div>
                             <div class="avds_text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam a ultricies metus.</div>
-                            <div class="avds_link avds_xl_link"><a href="/chi-tiet-san-pham">See More</a></div>
+                            <div class="avds_link avds_xl_link"><a href="#">See More</a></div>
                         </div>
                     </div>
                 </div>

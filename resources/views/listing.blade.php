@@ -59,7 +59,7 @@
                             <div class="product">
                                 <div class="product_image"><img src="{{asset($p->thumnail)}}" alt=""></div>
                                 <div class="product_content">
-                                    <div class="product_title"><a href="/chi-tiet-san-pham">{{$p->product_name}}</a></div>
+                                    <div class="product_title"><a href="{{url("san-pham/{$p->id}")}}">{{$p->product_name}}</a></div>
                                     <div class="product_price">{{$p->price}}</div>
                                 </div>
                             </div>

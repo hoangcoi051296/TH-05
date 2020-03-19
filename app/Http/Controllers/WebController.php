@@ -17,7 +17,6 @@ class WebController extends Controller
     public function product($id){
         $product=Product::find($id);//tra ve 1 object product theo id
         $category_product =Product::where("category_id",$product->category_id)->where('id',"!=",$product->id)->take(10)->get();
-
         $brand_product =Product::where("brand_id",$product->brand_id)->where('id',"!=",$product->id)->take(10)->get();
         return view('product',['product'=>$product,'category_product'=>$category_product,'brand_product'=>$brand_product]);
     }
