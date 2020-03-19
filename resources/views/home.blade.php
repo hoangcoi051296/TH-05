@@ -11,7 +11,7 @@
 
                 <!-- Slider Item -->
                 <div class="owl-item home_slider_item">
-                    <div class="home_slider_background" style="background-image:url({{asset("images/home_slider_1.jpg")}})"></div>
+                    <div class="home_slider_background" )><img src="{{asset("images/home_slider_1.jpg")}}" alt=""></div>
                     <div class="home_slider_content_container">
                         <div class="container">
                             <div class="row">
@@ -29,7 +29,7 @@
 
                 <!-- Slider Item -->
                 <div class="owl-item home_slider_item">
-                    <div class="home_slider_background" style="background-color:red"></div>
+                    <div class="home_slider_background" style="background-color:dimgrey"></div>
                     <div class="home_slider_content_container">
                         <div class="container">
                             <div class="row">
