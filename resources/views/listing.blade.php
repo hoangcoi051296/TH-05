@@ -13,7 +13,7 @@
                     <div class="row">
                         <div class="col">
                             <div class="home_content">
-                                <div class="home_title"><span>.</span></div>
+                                <div class="home_title"><span>{{$category->category_name}}</span></div>
                                 <div class="home_text"><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam a ultricies metus. Sed nec molestie eros. Sed viverra velit venenatis fermentum luctus.</p></div>
                             </div>
                         </div>
@@ -64,24 +64,7 @@
                                 </div>
                             </div>
                         @endforeach
-
-
-
-
-
-
-
-
-
                     </div>
-{{--                    <div class="product_pagination">--}}
-{{--                        <ul>--}}
-{{--                            <li class="active"><a href="#">01.</a></li>--}}
-{{--                            <li><a href="#">02.</a></li>--}}
-{{--                            <li><a href="#">03.</a></li>--}}
-{{--                        </ul>--}}
-{{--                    </div>--}}
-
                 </div>
             </div>
         </div>

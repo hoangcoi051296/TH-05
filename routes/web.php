@@ -34,8 +34,8 @@ Route::get("/san-pham/{id}","WebController@product");
 Route::get("/check-out","WebController@checkout");
 Route::get("/contact","WebController@contact");
 Route::get("/shopping/{id}","WebController@shopping")->middleware("auth");
-Route::get("/cart","Webcontroller@cart")->middleware("auth");
-Route::get("/clear-cart","Webcontroller@clearCart")->middleware("auth");
+Route::get("/cart","WebController@cart")->middleware("auth");
+Route::get("/clear-cart","WebController@clearCart")->middleware("auth");
 
 
 

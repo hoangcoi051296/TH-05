@@ -8,7 +8,7 @@
 
     <div class="home">
         <div class="home_container">
-            <div class="home_background" style="background-image:url(images/cart.jpg)"></div>
+            <div class="home_background" style="background-image:url({{asset("images/cart.jpg")}})"></div>
             <div class="home_content_container">
                 <div class="container">
                     <div class="row">
@@ -16,8 +16,7 @@
                             <div class="home_content">
                                 <div class="breadcrumbs">
                                     <ul>
-                                        <li><a href="/">Home</a></li>
-                                        <li><a href="#">Categories</a></li>
+                                        <li><a href="{{asset("/")}}">Home</a></li>
                                         <li>Shopping Cart</li>
                                     </ul>
                                 </div>
@@ -49,18 +48,42 @@
 
                     <!-- Cart Item -->
                     @forelse($cart as $p)
-                        <p>{{$p->product_name}} -- {{$p->cart_qty}}</p>
+                    <div class="cart_item d-flex flex-lg-row flex-column align-items-lg-center align-items-start justify-content-start">
+                        <!-- Name -->
+                        <div class="cart_item_product d-flex flex-row align-items-center justify-content-start">
+                            <div class="cart_item_image">
+                                <div><img src="{{asset($p->thumnail)}}" alt=""></div>
+                            </div>
+                            <div class="cart_item_name_container">
+                                <div class="cart_item_name"><a href="#">{{$p->product_name}}</a></div>
+                                <div class="cart_item_edit"><a href="#">Edit Product</a></div>
+                            </div>
+                        </div>
+                        <!-- Price -->
+                        <div class="cart_item_price">{{$p->price}}</div>
+                        <!-- Quantity -->
+                        <div class="cart_item_quantity">
+                            <div class="product_quantity_container">
+                                <div class="product_quantity clearfix">
+                                    <span>Qty</span>
+                                    <input id="quantity_input" type="text" pattern="[0-9]*" value="{{$p->cart_qty}}">
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Total -->
+                        <div class="cart_item_total">{{($p->cart_qty*$p->price)}}</div>
+                    </div>
                     @empty
-                        <p>Khong co san pham nao trong gio hang</p>
+                        <h3>Không có sản phẩm nào trong giỏ hàng</h3>
                     @endforelse
                 </div>
             </div>
             <div class="row row_cart_buttons">
                 <div class="col">
                     <div class="cart_buttons d-flex flex-lg-row flex-column align-items-start justify-content-start">
-                        <div class="button continue_shopping_button"><a href="#">Continue shopping</a></div>
+                        <div class="button continue_shopping_button"><a href="{{asset("/")}}">Continue shopping</a></div>
                         <div class="cart_buttons_right ml-lg-auto">
-                            <div class="button clear_cart_button"><a href="#">Clear cart</a></div>
+                            <div class="button clear_cart_button"><a href="{{asset("/clear-cart")}}">Clear cart</a></div>
                             <div class="button update_cart_button"><a href="#">Update cart</a></div>
                         </div>
                     </div>
@@ -113,7 +136,7 @@
                             <ul>
                                 <li class="d-flex flex-row align-items-center justify-content-start">
                                     <div class="cart_total_title">Subtotal</div>
-                                    <div class="cart_total_value ml-auto">$790.90</div>
+                                    <div class="cart_total_value ml-auto">{{$cart_total}}</div>
                                 </li>
                                 <li class="d-flex flex-row align-items-center justify-content-start">
                                     <div class="cart_total_title">Shipping</div>
@@ -121,7 +144,7 @@
                                 </li>
                                 <li class="d-flex flex-row align-items-center justify-content-start">
                                     <div class="cart_total_title">Total</div>
-                                    <div class="cart_total_value ml-auto">$790.90</div>
+                                    <div class="cart_total_value ml-auto">{{$cart_total}}</div>
                                 </li>
                             </ul>
                         </div>
