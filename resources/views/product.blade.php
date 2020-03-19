@@ -15,7 +15,7 @@
                         <div class="col">
                             <div class="home_content">
                                 <div class="home_title"><span>{{$brand->brand_name}}</span></div>
-                                <div class="home_text"><p> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam a ultricies metus. Sed nec molestie eros. Sed viverra velit venenatis fermentum luctus.</p></div>
+                                <div class="home_text"><p> Lorem ipsum dolor sit amet, consectetur adipiscing elit.. Nullam a ultricies metus. Sed nec molestie eros. Sed viverra velit venenatis fermentum luctus.</p></div>
                             </div>
                         </div>
                     </div>
