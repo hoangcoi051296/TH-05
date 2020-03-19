@@ -32,9 +32,10 @@ Route::get("/","WebController@home");
 Route::get("/danh-muc/{id}","WebController@listing");
 Route::get("/san-pham/{id}","WebController@product");
 Route::get("/check-out","WebController@checkout");
-Route::get("/gio-hang/{id}","WebController@shopping");
 Route::get("/contact","WebController@contact");
-//Route::get("/shopping/{id}","WebController@shopping");
+Route::get("/shopping/{id}","WebController@shopping")->middleware("auth");
+Route::get("/cart","Webcontroller@cart")->middleware("auth");
+Route::get("/clear-cart","Webcontroller@clearCart")->middleware("auth");
 
 
 
@@ -44,5 +45,6 @@ Auth::routes();
 //Route::get('/home', 'HomeController@index')->name('home');
 Route::get('/logout',function (){
    \Illuminate\Support\Facades\Auth::logout();
+   session()->flush();
    return redirect()->to("/login");
 });

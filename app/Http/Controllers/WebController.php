@@ -41,23 +41,64 @@ class WebController extends Controller
         $product=Product::where("category_id",$id)->take(8)->orderby('created_at','asc')->get();//loc theo category
         return view("listing",['products'=>$product]);
     }
+    //Gio hang
+//    public function shopping($id,Request $request){
+//        $product = Product::find($id);
+//        $cart = $request->session()->get("cart");
+//        if($cart == null){
+//            $cart = [];
+//        }
+//        foreach($cart as $p){
+//            if($p->id == $product->id){
+//                $p->cart_qty = $p->cart_qty+1;
+////                $p->cart_total = $p->price* $p->cart_qty;
+//                session(["cart"=>$cart]);
+//                return redirect()->to("/cart");
+//            }
+//        }
+//        $product->cart_qty = 1;
+////        $product->cart_total =$product->price* $p->cart_qty;
+//        $cart[] = $product;
+//        session(["cart"=>$cart]);
+//        return redirect()->to("/cart");
+//
+//    }
 
-    public function shopping(){
+    public function cart(Request $request){
+        $cart = $request->session()->get("cart");
+        if($cart == null){
+            $cart = [];
+        }
+        return view("cart",["cart"=>$cart]);
 
-        return view("cart");
     }
-//    public function home1(){
-//        $products= Product::all();
-//        $products= Product::take(10)->orderBy('product_name','asc')->get();
-//        return view("product_view");
-//    }
-//    public function shopping($id){
-//      $product=Product::find($id);
-//        $product->update([
-//        "quantity"=>$product->quantity-1
-//    ]);
-//    return redirect()->to("san-pham/{$product->id}");
-//    }
+    public function shopping($id, Request $request){
+      $product=Product::find($id);
+      $cart =$request->session()->get("cart");
+        $cart =$request->session()->get("cart");
+        if($cart==null){
+            $cart=[];
+        }
+        foreach ($cart as $p){
+            if($p->id == $product->id){
+                $p->cart_qty =$p->cart_qty+1;
+                session(["cart"=>$cart]);
+                return redirect()->to("/cart");
+            }
+        }
+        $product->cart_qty=1;
+        $cart[]=$product;
+        session(["cart"=>$cart]);
+    return redirect()->to("/cart");
+    }
+    public function filter($c_id,$b_id){
+        $products = Product::where('category_id',$c_id)->where('brand_id',$b_id)->get();
+    }
+    public function clearCart(Request $request){
+        $request->session()->forget("cart");
+//        $request->session()->flush();//Xoa toan bo phien lam viec
+        return redirect()->to("/");
+    }
 }
 
 

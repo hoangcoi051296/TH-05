@@ -16,8 +16,8 @@
                             <div class="home_content">
                                 <div class="breadcrumbs">
                                     <ul>
-                                        <li><a href="index.html">Home</a></li>
-                                        <li><a href="categories.html">Categories</a></li>
+                                        <li><a href="/">Home</a></li>
+                                        <li><a href="#">Categories</a></li>
                                         <li>Shopping Cart</li>
                                     </ul>
                                 </div>
@@ -48,36 +48,11 @@
                 <div class="col">
 
                     <!-- Cart Item -->
-                    <div class="cart_item d-flex flex-lg-row flex-column align-items-lg-center align-items-start justify-content-start">
-                        <!-- Name -->
-                        <div class="cart_item_product d-flex flex-row align-items-center justify-content-start">
-                            <div class="cart_item_image">
-                                <div><img src="images/cart_1.jpg" alt=""></div>
-                            </div>
-                            <div class="cart_item_name_container">
-                                <div class="cart_item_name"><a href="#">Smart Phone Deluxe Edition</a></div>
-                                <div class="cart_item_edit"><a href="#">Edit Product</a></div>
-                            </div>
-                        </div>
-                        <!-- Price -->
-                        <div class="cart_item_price">$790.90</div>
-                        <!-- Quantity -->
-                        <div class="cart_item_quantity">
-                            <div class="product_quantity_container">
-                                <div class="product_quantity clearfix">
-                                    <span>Qty</span>
-                                    <input id="quantity_input" type="text" pattern="[0-9]*" value="1">
-                                    <div class="quantity_buttons">
-                                        <div id="quantity_inc_button" class="quantity_inc quantity_control"><i class="fa fa-chevron-up" aria-hidden="true"></i></div>
-                                        <div id="quantity_dec_button" class="quantity_dec quantity_control"><i class="fa fa-chevron-down" aria-hidden="true"></i></div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <!-- Total -->
-                        <div class="cart_item_total">$790.90</div>
-                    </div>
-
+                    @forelse($cart as $p)
+                        <p>{{$p->product_name}} -- {{$p->cart_qty}}</p>
+                    @empty
+                        <p>Khong co san pham nao trong gio hang</p>
+                    @endforelse
                 </div>
             </div>
             <div class="row row_cart_buttons">
