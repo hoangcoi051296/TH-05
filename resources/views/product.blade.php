@@ -116,7 +116,7 @@
                     @foreach($category_product as $p)
                         <!-- Product -->
                         <div class="product">
-                            <div class="product_image"><img src="{{$p->thumbnail}}" alt=""></div>
+                            <div class="product_image"><img src="{{asset($p->thumbnail)}}" alt=""></div>
                             <div class="product_content">
                                 <div class="product_title"><a href="{{url("san-pham/{$p->id}")}}">{{$p->product_name}}</a></div>
                                 <div class="product_price">{{$p->price}}</div>
