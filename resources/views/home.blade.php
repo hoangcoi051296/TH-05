@@ -94,7 +94,7 @@
                 <div class="avds_background" style="background-image:url({{asset("images/avds_small.jpg")}})"></div>
                 <div class="avds_small_inner">
                     <div class="avds_discount_container">
-                        <img src="images/discount.png" alt="">
+                        <img src="{{asset("images/discount.png")}}" alt="">
                         <div>
                             <div class="avds_discount">
                                 <div>20<span>%</span></div>
