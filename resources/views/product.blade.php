@@ -112,7 +112,7 @@
             <div class="row">
                 <div class="col">
 
-                    <div class="product_grid">
+                    <div class="product_grid" style="height: 680px">
                     @foreach($category_product as $p)
                         <!-- Product -->
                         <div class="product">
