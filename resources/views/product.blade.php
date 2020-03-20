@@ -47,8 +47,8 @@
                 <div class="col-lg-6">
                     <div class="details_content">
                         <div class="details_name">{{$product->product_name}}</div>
-                        <div class="details_discount">{{$product->product_price}}</div>
-                        <div class="details_price">$670</div>
+                        <div class="details_discount">{{$product->price}} $</div>
+                        <div class="details_price">{{($product->price*95/100)}} $</div>
 
                         <!-- In Stock -->
                         <div class="in_stock_container">
