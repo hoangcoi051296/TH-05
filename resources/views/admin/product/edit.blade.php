@@ -24,7 +24,7 @@
                         </div>
                         <div class="form-group has-success">
                             <label for="cc-name" class="control-label mb-1">Thông tin sản phẩm</label>
-                            <input id="cc-name" name="product_desc" type="text" value="{{old("product_desc")}}"
+                            <input id="cc-name" name="product_desc" type="text" value="{{$product->product_desc}}"
                                    class="form-control cc-name @if($errors->has("product_desc"))is-invalid @endif" >
                             <span class="help-block field-validation-valid"></span>
                             @if($errors->has("product_desc"))
@@ -33,7 +33,7 @@
                         </div>
                         <div class="form-group has-success">
                             <label for="cc-name" class="control-label mb-1">Thumnail</label>
-                            <input id="cc-name" name="thumnail" type="text" value="{{old("thumnail")}}"
+                            <input id="cc-name" name="thumnail" type="text" value="{{$product->thumnail}}"
                                    class="form-control cc-name @if($errors->has("thumnail"))is-invalid @endif" >
                             <span class="help-block field-validation-valid"></span>
                             @if($errors->has("thumnail"))
@@ -42,7 +42,7 @@
                         </div>
                         <div class="form-group has-success">
                             <label for="cc-name" class="control-label mb-1">Gallery</label>
-                            <input id="cc-name" name="gallery" type="text" value="{{old("gallery")}}"
+                            <input id="cc-name" name="gallery" type="text" value="{{$product->gallery}}"
                                    class="form-control cc-name @if($errors->has("gallery"))is-invalid @endif" >
                             <span class="help-block field-validation-valid"></span>
                             @if($errors->has("gallery"))
@@ -67,7 +67,7 @@
                         </div>
                         <div class="form-group has-success">
                             <label for="cc-name" class="control-label mb-1">Giá</label>
-                            <input id="cc-name" name="price" type="text" value="{{old("price")}}"
+                            <input id="cc-name" name="price" type="text" value="{{$product->price}}"
                                    class="form-control cc-name @if($errors->has("product_desc"))is-invalid @endif" >
                             <span class="help-block field-validation-valid"></span>
                             @if($errors->has("price"))
@@ -76,7 +76,7 @@
                         </div>
                         <div class="form-group has-success">
                             <label for="cc-name" class="control-label mb-1">Số lượng</label>
-                            <input id="cc-name" name="quantity" type="text" value="{{old("quantity")}}"
+                            <input id="cc-name" name="quantity" type="text" value="{{$product->quantity}}"
                                    class="form-control cc-name @if($errors->has("quantity"))is-invalid @endif" >
                             <span class="help-block field-validation-valid"></span>
                             @if($errors->has("quantity"))
