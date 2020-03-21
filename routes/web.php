@@ -31,12 +31,14 @@ Route::get("/","WebController@home");
 // Route::METHOD(path_string,Controller@function_in_controller);
 Route::get("/danh-muc/{id}","WebController@listing");
 Route::get("/san-pham/{id}","WebController@product");
-Route::get("/check-out","WebController@checkout");
 Route::get("/contact","WebController@contact");
 Route::get("/shopping/{id}","WebController@shopping")->middleware("auth");
 Route::get("/cart","WebController@cart")->middleware("auth");
 Route::get("/clear-cart","WebController@clearCart")->middleware("auth");
-
+Route::get("/check-out","WebController@checkout")->middleware("auth");
+Route::post("/check-out","WebController@placeOrder")->middleware("auth");
+Route::get("checkout-success",'WebController@checkoutSuccess')->middleware("auth");
+Route::get("search",'Webcontroller@getSearch');
 
 
 

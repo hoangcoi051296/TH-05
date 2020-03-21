@@ -32,7 +32,7 @@
 
                     <!-- Product Sorting -->
                     <div class="sorting_bar d-flex flex-md-row flex-column align-items-md-center justify-content-md-start">
-                        <div class="results">Showing <span>#</span> results</div>
+                        <div class="results">Showing <span>8</span> results</div>
                         <div class="sorting_container ml-md-auto">
                             <div class="sorting">
                                 <ul class="item_sorting">
@@ -64,6 +64,14 @@
                                 </div>
                             </div>
                         @endforeach
+                    </div>
+                    <div class="product_pagination">
+{{--                        <ul>--}}
+{{--                            <li class="active"><a href="#">01.</a></li>--}}
+{{--                            <li><a href="#">02.</a></li>--}}
+{{--                            <li><a href="#">03.</a></li>--}}
+{{--                        </ul>--}}
+                        {!! $products->links() !!}
                     </div>
                 </div>
             </div>

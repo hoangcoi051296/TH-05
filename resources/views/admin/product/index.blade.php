@@ -57,5 +57,8 @@
             @endforelse
             </tbody>
         </table>
+        <div class="product_pagination">
+            {!! $products->links() !!}
+        </div>
     </div>
 @endsection

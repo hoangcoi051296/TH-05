@@ -26,7 +26,6 @@
                                     </ul>
                                 </li>
                                 <li><a href="#">Accessories</a></li>
-                                <li><a href="#">Offers</a></li>
                                 <li><a href="{{url("/contact")}}">Contact</a></li>
                                 <li  class="hassubs active"><a href="#">Account</a>
                                     <ul>
@@ -35,9 +34,16 @@
                                         <li><a href="{{url("/register")}}">Register</a></li>
                                     </ul>
                                 </li>
-
+                                <li>
+                                    <form class="form-inline "  style="width: 200px;height: 30px" method="get" action="{{asset('search')}}">
+                                        <input class="form-control form-control-sm ml-3 w-75 " name="key"  type="text"  placeholder="Search"
+                                               aria-label="Search" >
+                                       <button style="height: 30px;width: 30px" type="submit"> <span class="fa fa-search form-control-feedback"></span></button>
+                                    </form>
+                                </li>
                             </ul>
                         </nav>
+
                         <div class="header_extra ml-auto">
                             <div class="shopping_cart">
                                 @php $cart= session("cart") @endphp

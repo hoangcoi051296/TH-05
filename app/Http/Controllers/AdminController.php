@@ -149,7 +149,7 @@ class AdminController extends Controller
     }
 
     public function product(){
-        $products=Product::all();
+        $products=Product::paginate(10);
         return view('admin.product.index',['products'=>$products]);
     }
     public function productCreate(){
