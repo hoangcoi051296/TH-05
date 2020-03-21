@@ -38,7 +38,7 @@ Route::get("/clear-cart","WebController@clearCart")->middleware("auth");
 Route::get("/check-out","WebController@checkout")->middleware("auth");
 Route::post("/check-out","WebController@placeOrder")->middleware("auth");
 Route::get("checkout-success",'WebController@checkoutSuccess')->middleware("auth");
-Route::get("search",'Webcontroller@getSearch');
+Route::get("search",'WebController@getSearch');
 
 
 
