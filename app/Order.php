@@ -14,4 +14,8 @@ class Order extends Model
     const STATUS_SHIPPING=2;
     const STATUS_COMPLETE=3;
     const STATUS_CANCEL=4;
+    public function Products()
+    {
+        return $this->belongsToMany("\App\Product",'orders_products','orders_id','product_id')->withPivot('qty','price');
+    }
 }

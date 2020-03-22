@@ -1,8 +1,8 @@
 @extends('layout')
 
 @section('title',"Giỏ hàng")
-<link rel="stylesheet" type="text/css" href="styles/cart.css">
-<link rel="stylesheet" type="text/css" href="styles/cart_responsive.css">
+<link rel="stylesheet" type="text/css" href="{{asset("styles/cart.css")}}">
+<link rel="stylesheet" type="text/css" href="{{asset("styles/cart_responsive.css")}}">
 @section('content')
     <!-- Home -->
 
@@ -47,32 +47,32 @@
                 <div class="col">
 
                     <!-- Cart Item -->
-                    @forelse($cart as $p)
-                    <div class="cart_item d-flex flex-lg-row flex-column align-items-lg-center align-items-start justify-content-start">
-                        <!-- Name -->
-                        <div class="cart_item_product d-flex flex-row align-items-center justify-content-start">
-                            <div class="cart_item_image">
-                                <div><img src="{{asset($p->thumnail)}}" alt=""></div>
-                            </div>
-                            <div class="cart_item_name_container">
-                                <div class="cart_item_name"><a href="#">{{$p->product_name}}</a></div>
-                                <div class="cart_item_edit"><a href="#">Edit Product</a></div>
-                            </div>
-                        </div>
-                        <!-- Price -->
-                        <div class="cart_item_price">{{$p->price}}</div>
-                        <!-- Quantity -->
-                        <div class="cart_item_quantity">
-                            <div class="product_quantity_container">
-                                <div class="product_quantity clearfix">
-                                    <span>Qty</span>
-                                    <input id="quantity_input" type="text" pattern="[0-9]*" value="{{$p->cart_qty}}">
+                    @forelse($product as $p)
+                        <div class="cart_item d-flex flex-lg-row flex-column align-items-lg-center align-items-start justify-content-start">
+                            <!-- Name -->
+                            <div class="cart_item_product d-flex flex-row align-items-center justify-content-start">
+                                <div class="cart_item_image">
+                                    <div><img src="{{asset($p->thumnail)}}" alt=""></div>
+                                </div>
+                                <div class="cart_item_name_container">
+                                    <div class="cart_item_name"><a href="{{url("san-pham/{$p->id}")}}">{{$p->product_name}}</a></div>
+                                    <div class="cart_item_edit"><a href="#">Edit Product</a></div>
                                 </div>
                             </div>
+                            <!-- Price -->
+                            <div class="cart_item_price">{{$p->price}}</div>
+                            <!-- Quantity -->
+                            <div class="cart_item_quantity">
+                                <div class="product_quantity_container">
+                                    <div class="product_quantity clearfix">
+                                        <span>Qty</span>
+                                        <input id="quantity_input" type="text" pattern="[0-9]*" value="{{$p->pivot->qty}}">
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Total -->
+                            <div class="cart_item_total">{{$p->pivot->qty*$p->price}}</div>
                         </div>
-                        <!-- Total -->
-                        <div class="cart_item_total">{{($p->cart_qty*$p->price)}}</div>
-                    </div>
                     @empty
                         <h3>Không có sản phẩm nào trong giỏ hàng</h3>
                     @endforelse
@@ -124,7 +124,7 @@
                             <ul>
                                 <li class="d-flex flex-row align-items-center justify-content-start">
                                     <div class="cart_total_title">Subtotal</div>
-                                    <div class="cart_total_value ml-auto">{{$cart_total}}</div>
+                                    <div class="cart_total_value ml-auto">xx</div>
                                 </li>
                                 <li class="d-flex flex-row align-items-center justify-content-start">
                                     <div class="cart_total_title">Shipping</div>
@@ -132,11 +132,11 @@
                                 </li>
                                 <li class="d-flex flex-row align-items-center justify-content-start">
                                     <div class="cart_total_title">Total</div>
-                                    <div class="cart_total_value ml-auto">{{$cart_total}}</div>
+                                    <div class="cart_total_value ml-auto">xx</div>
                                 </li>
                             </ul>
                         </div>
-                        <div class="button checkout_button"><a href="{{url("check-out")}}">Proceed to checkout</a></div>
+                        <div class="button checkout_button"><a href="{{url("repurchase/{$p->pivot->orders_id}")}}">Place Order</a></div>
                     </div>
                 </div>
             </div>

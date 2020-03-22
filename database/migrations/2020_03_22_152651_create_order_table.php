@@ -34,6 +34,7 @@ class CreateOrderTable extends Migration
             $table->foreign("product_id")->references("id")->on("product");
 
         });
+
     }
 
     /**
@@ -45,5 +46,6 @@ class CreateOrderTable extends Migration
     {
         Schema::dropIfExists('orders_products');
         Schema::dropIfExists('orders');
+
     }
 }

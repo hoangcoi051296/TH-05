@@ -15,7 +15,11 @@ class Product extends Model
     public function Brand(){
         return $this->belongsTo("\App\Brand");
     }
+    public function Orders(){
+        return $this->belongsToMany("\App\Order",'orders_products','product_id','orders_id',['qty']);
+    }
     public function getPrice(){
         return number_format($this->price,0,',','.');
     }
+
 }

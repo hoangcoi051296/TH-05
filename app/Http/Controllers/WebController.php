@@ -165,6 +165,54 @@ class WebController extends Controller
         $product = Product::where('product_name','like','%'.$request->get("key").'%')->get();
         return view("search",['products'=>$product]);
     }
+
+    public function getListOrder(){
+
+        $listOrder =Order::where ("user_id",Auth::id())->get();
+        return view('listOrder',['listOrder'=>$listOrder]);
+    }
+    public function getOrderPurchased($id){
+        $order = Order::find($id);
+         $product=$order->Products;
+        return view('viewOrder',['product'=>$product]);
+    }
+
+    public function repurchase($id){
+        $order = Order::find($id);
+        $product=$order->Products;
+        $grand_total = 0;
+        foreach ($order->Products as $product) {
+            $grand_total+=$product->pivot->qty*$product->price;
+
+        }
+
+        $order = Order::create([
+            'user_id'=> Auth::id(),
+            'customer_name'=> $order->customer_name,
+            'shipping_address'=>$order->shipping_address,
+            'telephone'=> $order->telephone,
+            'grand_total'=> $grand_total,
+            'payment_method'=>$order->payment_method,
+            "status"=> Order::STATUS_PENDING
+        ]);
+
+        foreach ($order as $o){
+
+            foreach ($product as $p){
+                DB::table("orders_products")->insert([
+
+                'orders_id'=> $order->id,
+                'product_id'=>$product->id,
+                'qty'=>$product->pivot->qty,
+                'price'=>$product->price,
+            ]);}
+
+        }
+
+        return redirect()->to("checkout-succsses");
+    }
 }
+
+
 
 

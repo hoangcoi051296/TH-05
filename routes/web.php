@@ -39,7 +39,23 @@ Route::get("/check-out","WebController@checkout")->middleware("auth");
 Route::post("/check-out","WebController@placeOrder")->middleware("auth");
 Route::get("checkout-success",'WebController@checkoutSuccess')->middleware("auth");
 Route::get("search",'WebController@getSearch');
+Route::get("listOrder",'WebController@getListOrder');
 
+Route::get("viewOrder/{id}",'WebController@getOrderPurchased');
+Route::get("repurchase/{id}",'WebController@repurchase');
+//Route::get("lknn",function (){
+//    $orders=\App\Order::all();
+//
+//    foreach ($orders as $o){
+//        foreach ($o->Products as $product){
+//            echo $o->id;
+//            echo $product->id;
+//            echo $product->pivot->qty;
+//            echo $product->pivot->price;
+//
+//        };
+//    }
+//});
 
 
 Auth::routes();
@@ -50,3 +66,4 @@ Route::get('/logout',function (){
    session()->flush();
    return redirect()->to("/login");
 });
+
