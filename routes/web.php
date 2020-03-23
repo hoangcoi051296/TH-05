@@ -43,19 +43,19 @@ Route::get("listOrder",'WebController@getListOrder');
 
 Route::get("viewOrder/{id}",'WebController@getOrderPurchased');
 Route::get("repurchase/{id}",'WebController@repurchase');
-//Route::get("lknn",function (){
-//    $orders=\App\Order::all();
-//
-//    foreach ($orders as $o){
-//        foreach ($o->Products as $product){
-//            echo $o->id;
-//            echo $product->id;
-//            echo $product->pivot->qty;
-//            echo $product->pivot->price;
-//
-//        };
-//    }
-//});
+Route::get("lknn",function (){
+    $orders=\App\Order::all();
+
+    foreach ($orders as $o){
+        foreach ($o->Products as $p){
+            echo $o->id;
+            echo $p->id;
+            echo $p->pivot->qty;
+            echo $p->pivot->price;
+
+        };
+    }
+});
 
 
 Auth::routes();

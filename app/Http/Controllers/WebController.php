@@ -9,6 +9,7 @@ use App\Product;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
+use mysql_xdevapi\Exception;
 
 class WebController extends Controller
 {
@@ -180,34 +181,37 @@ class WebController extends Controller
     public function repurchase($id){
         $order = Order::find($id);
         $product=$order->Products;
+
         $grand_total = 0;
-        foreach ($order->Products as $product) {
-            $grand_total+=$product->pivot->qty*$product->price;
+        foreach ($product as $p) {
+            $grand_total+=$p->pivot->qty*$p->price;
 
         }
 
-        $order = Order::create([
-            'user_id'=> Auth::id(),
-            'customer_name'=> $order->customer_name,
-            'shipping_address'=>$order->shipping_address,
-            'telephone'=> $order->telephone,
-            'grand_total'=> $grand_total,
-            'payment_method'=>$order->payment_method,
-            "status"=> Order::STATUS_PENDING
-        ]);
+        try {
+            $o = Order::create([
+                'user_id'=> Auth::id(),
+                'customer_name'=> $order->customer_name,
+                'shipping_address'=>$order->shipping_address,
+                'telephone'=> $order->telephone,
+                'grand_total'=> $grand_total,
+                'payment_method'=>$order->payment_method,
+                "status"=> Order::STATUS_PENDING
+            ]);
+        }catch (\Exception $e){
+            return redirect()->back();
+        }
 
-        foreach ($order as $o){
-
-            foreach ($product as $p){
-                DB::table("orders_products")->insert([
-
+        foreach ($product as $p){
+            DB::table("orders_products")->insert([
                 'orders_id'=> $order->id,
-                'product_id'=>$product->id,
-                'qty'=>$product->pivot->qty,
-                'price'=>$product->price,
-            ]);}
-
+                'product_id'=>$p->id,
+                'qty'=>$p->pivot->qty,
+                'price'=>$p->pivot->price
+            ]);
         }
+
+
 
         return redirect()->to("checkout-succsses");
     }
