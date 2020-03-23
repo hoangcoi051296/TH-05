@@ -4,16 +4,22 @@ namespace App\Http\Controllers;
 
 use App\Brand;
 use App\Category;
+use App\Mail\OrderCreated;
 use App\Order;
 use App\Product;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Mail;
 use mysql_xdevapi\Exception;
 
 class WebController extends Controller
 {
     public function home(){
+//        if(is_admin()){
+//            die("admin day");
+//        }
+
         $newest =Product::orderBy('created_at','desc')->take(4)->get();
         $cheaps =Product::orderBy('price','asc')->take(4)->get();
         $exs =Product::orderBy('price','desc')->take(4)->get();
@@ -155,6 +161,7 @@ class WebController extends Controller
             ]);
         }
         session()->forget('cart');
+        Mail::to("thaihoangdo0512@gmail.com")->send(new OrderCreated());
         return redirect()->to("checkout-success");
     }
 
