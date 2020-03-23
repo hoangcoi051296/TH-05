@@ -188,19 +188,19 @@ class WebController extends Controller
 
         }
 
-        try {
-            $o = Order::create([
-                'user_id'=> Auth::id(),
-                'customer_name'=> $order->customer_name,
-                'shipping_address'=>$order->shipping_address,
-                'telephone'=> $order->telephone,
-                'grand_total'=> $grand_total,
-                'payment_method'=>$order->payment_method,
-                "status"=> Order::STATUS_PENDING
-            ]);
-        }catch (\Exception $e){
-            return redirect()->back();
-        }
+//        try {
+//            $o = Order::create([
+//                'user_id'=> Auth::id(),
+//                'customer_name'=> $order->customer_name,
+//                'shipping_address'=>$order->shipping_address,
+//                'telephone'=> $order->telephone,
+//                'grand_total'=> $grand_total,
+//                'payment_method'=>$order->payment_method,
+//                "status"=> Order::STATUS_PENDING
+//            ]);
+//        }catch (\Exception $e){
+//            return redirect()->back();
+//        }
 
         foreach ($product as $p){
             DB::table("orders_products")->insert([
