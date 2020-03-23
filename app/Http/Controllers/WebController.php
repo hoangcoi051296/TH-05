@@ -19,7 +19,7 @@ class WebController extends Controller
 //        if(is_admin()){
 //            die("admin day");
 //        }
-        Mail::to("hoangcoi051296@gmail.com")->send(new OrderCreated());
+
         $newest =Product::orderBy('created_at','desc')->take(4)->get();
         $cheaps =Product::orderBy('price','asc')->take(4)->get();
         $exs =Product::orderBy('price','desc')->take(4)->get();
@@ -161,7 +161,7 @@ class WebController extends Controller
             ]);
         }
         session()->forget('cart');
-
+        Mail::to(Auth::user()->mail)->send(new OrderCreated($order));
         return redirect()->to("checkout-success");
     }
 
