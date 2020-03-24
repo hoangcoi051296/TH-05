@@ -18,14 +18,21 @@
 {{--                                    </ul>--}}
                                 </li>
                                 <li class="hassubs">
-                                    <a href="#">Product</a>
+                                    <a href="#">Category</a>
                                     <ul>
                                         @foreach(\App\Category::all() as $c)
                                         <li><a href="{{url("/danh-muc/{$c->id}")}}">{{$c->category_name}}</a></li>
                                             @endforeach
                                     </ul>
                                 </li>
-                                <li><a href="#">Accessories</a></li>
+                                <li class="hassubs">
+                                    <a href="#">Brand</a>
+                                    <ul>
+                                        @foreach(\App\Brand::all() as $b)
+                                            <li><a href="{{url("/thuong-hieu/{$b->id}")}}">{{$b->brand_name}}</a></li>
+                                        @endforeach
+                                    </ul>
+                                </li>
                                 <li><a href="{{url("/contact")}}">Contact</a></li>
                                 <li  class="hassubs active"><a href="#">Account</a>
                                     <ul>

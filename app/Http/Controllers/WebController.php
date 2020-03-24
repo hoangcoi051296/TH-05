@@ -35,14 +35,22 @@ class WebController extends Controller
     public function contact(){
         return view("contact");
     }
-    public function listing($id){
-        $product=Product::paginate(8);//loc theo category
+    public function listingCategory($id){
+        //loc theo category
         $category = Category::find($id);
+        $product=$category->Products()->paginate(8);
+//        $product=Product:: paginate(8);
         $so_luong_sp = $category->Products()->count(); // ra so luong san pham
         // $category->Products ;// Lay tat ca product cua category nay
         // neu muon lay 1 so luong nhat dinh 10 san pham
         // $category->Products()->orderBy('price','desc')->take(10)->get();
-        return view("listing",['products'=>$product,'category'=>$category]);
+        return view("listingCategory",['products'=>$product,'category'=>$category]);
+    }
+    public function listingBrand($id){
+        //loc theo category
+        $brand = Brand::find($id);
+        $product=$brand->Products()->paginate(8);
+        return view("listingBrand",['products'=>$product,'brand'=>$brand]);
     }
     //Gio hang
 //    public function shopping($id,Request $request){
