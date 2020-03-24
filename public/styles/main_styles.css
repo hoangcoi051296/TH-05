@@ -1093,6 +1093,7 @@ section.home_slider_background
 .product_image
 {
 	width: 100%;
+    height: 200px;
 }
 .product_image img
 {
