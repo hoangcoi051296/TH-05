@@ -161,7 +161,7 @@ class AdminController extends Controller
         $request->validate([ // truyen vao rules de validate
             "product_name"=> "required|string|unique:product" , // validation laravel
             "product_desc"=> "required|string",
-            "thumnail"=> "required|string|unique:product",
+            "thumnail"=> "required|string|unique:product,",
             "gallery"=> "required|string|unique:product",
             "category_id"=> "required|string",
             "brand_id"=> "required|string",
@@ -195,8 +195,8 @@ class AdminController extends Controller
         $request->validate([
             "product_name"=> "required|string|unique:product" , // validation laravel
             "product_desc"=> "required|string",
-            "thumnail"=> "required|string|unique:product",
-            "gallery"=> "required|string|unique:product",
+            "thumnail"=> "required|string|unique:product,thumnail,".$id,
+            "gallery"=> "required|string|unique:product,gallery,".$id,
             "category_id"=> "required|string",
             "brand_id"=> "required|string",
             "price"=> "required",
