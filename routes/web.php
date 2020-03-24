@@ -38,7 +38,7 @@ Route::get("/cart","WebController@cart")->middleware("auth");
 Route::get("/clear-cart","WebController@clearCart")->middleware("auth");
 Route::get("/check-out","WebController@checkout")->middleware("auth");
 Route::post("/check-out","WebController@placeOrder")->middleware("auth");
-Route::get("checkout-success",'WebController@checkoutSuccess') ->middleware("auth");
+Route::get("checkout-success","WebController@checkoutSuccess") ->middleware("auth");
 Route::get("search",'WebController@getSearch');
 Route::get("listOrder",'WebController@getListOrder');
 
@@ -58,6 +58,20 @@ Route::get("orderPurchasedDestroy/{id}",'WebController@orderPurchasedDestroy');
 //        };
 //    }
 //});
+Route::get("sp",function (){
+    $product=\App\Product::find(1);
+
+
+        echo $product->product_name;
+        echo $product->thumnail;
+      $img =explode(",",$product->gallery);
+      foreach ($img as $i){
+          echo $i;
+          echo"<\bđar>";
+      }
+
+
+});
 
 
 Auth::routes();

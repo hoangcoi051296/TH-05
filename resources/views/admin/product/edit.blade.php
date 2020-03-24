@@ -51,7 +51,7 @@
                         </div>
                         <div class="form-group has-success">
                             <label for="cc-name" class="control-label mb-1">Danh mục</label>
-                            <select name="category_id" class="browser-default custom-select">
+                            <select name="category_id" class="browser-default custom-select" >
                                 @foreach($categories as $c)
                                     <option value="{{$c->id}}">{{$c->category_name}}</option>
                                 @endforeach
