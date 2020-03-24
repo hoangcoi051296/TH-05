@@ -149,12 +149,12 @@ class WebController extends Controller
             ]);
         }
         session()->forget('cart');
-//        Mail::to(Auth::user()->email)->send(new OrderCreated($order));
-        return redirect()->to("checkout-success");
+        Mail::to(Auth::user()->email)->send(new OrderCreated($order));
+        return redirect()->to("checkout-success/{id}");
     }
 
     public function checkoutSuccess(){
-
+        return view("checkoutSuccess");
     }
 
     public function getSearch(Request $request){
@@ -199,7 +199,7 @@ class WebController extends Controller
                 'price'=>$p->pivot->price
             ]);
         }
-        return redirect()->to("checkout-succsses");
+        return redirect()->to("checkout-success");
     }
     public function orderPurchasedDestroy($id){
         $order=Order::find($id);

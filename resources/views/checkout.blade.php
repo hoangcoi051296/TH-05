@@ -1,13 +1,13 @@
 @extends('layout')
 
 @section('title',"Check out")
-<link rel="stylesheet" type="text/css" href="styles/checkout.css">
-<link rel="stylesheet" type="text/css" href="styles/checkout_responsive.css">
+<link rel="stylesheet" type="text/css" href="{{asset("styles/checkout.css")}}">
+<link rel="stylesheet" type="text/css" href="{{asset("styles/checkout_responsive.css")}}">
 @section('content')
     <!-- Checkout -->
     <div class="home">
         <div class="home_container">
-            <div class="home_background" style="background-image:url(images/cart.jpg)"></div>
+            <div class="home_background" style="background-image:url({{asset("images/cart.jpg")}})"></div>
             <div class="home_content_container">
                 <div class="container">
                     <div class="row">

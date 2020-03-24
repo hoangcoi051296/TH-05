@@ -37,26 +37,26 @@ Route::get("/cart","WebController@cart")->middleware("auth");
 Route::get("/clear-cart","WebController@clearCart")->middleware("auth");
 Route::get("/check-out","WebController@checkout")->middleware("auth");
 Route::post("/check-out","WebController@placeOrder")->middleware("auth");
-Route::get("checkout-success",'WebController@checkoutSuccess')->middleware("auth");
+Route::get("checkout-success",'WebController@checkoutSuccess') ->middleware("auth");
 Route::get("search",'WebController@getSearch');
 Route::get("listOrder",'WebController@getListOrder');
 
 Route::get("viewOrder/{id}",'WebController@getOrderPurchased');
 Route::get("repurchase/{id}",'WebController@repurchase');
 Route::get("orderPurchasedDestroy/{id}",'WebController@orderPurchasedDestroy');
-Route::get("lknn",function (){
-    $orders=\App\Order::all();
-
-    foreach ($orders as $o){
-        foreach ($o->Products as $p){
-            echo $o->id;
-            echo $p->id;
-            echo $p->pivot->qty;
-            echo $p->pivot->price;
-
-        };
-    }
-});
+//Route::get("lknn",function (){
+//    $orders=\App\Order::all();
+//
+//    foreach ($orders as $o){
+//        foreach ($o->Products as $p){
+//            echo $o->id;
+//            echo $p->id;
+//            echo $p->pivot->qty;
+//            echo $p->pivot->price;
+//
+//        };
+//    }
+//});
 
 
 Auth::routes();
