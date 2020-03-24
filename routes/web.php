@@ -43,6 +43,7 @@ Route::get("listOrder",'WebController@getListOrder');
 
 Route::get("viewOrder/{id}",'WebController@getOrderPurchased');
 Route::get("repurchase/{id}",'WebController@repurchase');
+Route::get("orderPurchasedDestroy/{id}",'WebController@orderPurchasedDestroy');
 Route::get("lknn",function (){
     $orders=\App\Order::all();
 

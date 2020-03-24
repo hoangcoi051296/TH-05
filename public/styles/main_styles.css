@@ -1088,6 +1088,8 @@ section.home_slider_background
 {
 	width: calc((100% - 90px) / 4);
 	margin-bottom: 59px;
+    border-bottom: 1px solid midnightblue;
+    border-top: 1px solid midnightblue;
 }
 .product_image
 {
@@ -1106,7 +1108,7 @@ section.home_slider_background
 .product_title a
 {
 	font-size: 18px;
-	font-weight: 500;
+	font-weight: 300;
 	color: #1b1b1b;
 	line-height: 1.1;
 	-webkit-transition: all 200ms ease;
@@ -1117,13 +1119,13 @@ section.home_slider_background
 }
 .product_title a:hover
 {
-	color: #e95a5a;
+	color: blue;
 }
 .product_price
 {
 	font-size: 16px;
-	font-weight: 500;
-	color: #6c6a74;
+	font-weight: 400;
+	color: #e10c00;
 	line-height: 0.75;
 	margin-top: 13px;
 }

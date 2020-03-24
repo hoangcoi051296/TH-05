@@ -1,7 +1,15 @@
 @extends('layout')
 
 @section('title',"Trang chủ")
-
+<style>
+    .section-title{
+        font-size: 27px;
+        color: #333;
+        font-weight: 600;
+        padding: 14px 10px;
+        text-transform: uppercase;
+    }
+</style>
 @section('content')
     <div class="home">
         <div class="home_slider_container">
@@ -127,11 +135,12 @@
         <div class="container">
             <div class="row">
                 <div class="col">
-                    <h2>Sản phẩm mới nhất</h2>
-                    <div class="product_grid">
+                    <h2 class="section-title">Sản phẩm mới nhất</h2>
+                    <div class="product_grid" >
                         @foreach($newest as $p)
                             <div class="product" style="position: absolute;left: 0px;top: 50px;">
-                                <div class="product_image"><img src="{{asset($p->thumnail)}}" alt=""></div>
+                                <div class="product_image"><img src="{{asset($p->thumnail)}}" alt="">
+                                </div>
                                 <div class="product_content">
                                     <div class="product_title"><a href="{{url("san-pham/{$p->id}")}}">{{$p->product_name}}</a></div>
                                     <div class="product_price">{{$p->price}}</div>
@@ -143,7 +152,7 @@
             </div>
             <div class="row">
                 <div class="col">
-                    <h2>Sản phẩm rẻ nhất</h2>
+                    <h2 class="section-title">Sản phẩm rẻ nhất</h2>
                     <div class="product_grid">
                         @foreach($cheaps as $p)
                             <div class="product">
@@ -159,7 +168,7 @@
             </div>
             <div class="row">
                 <div class="col">
-                    <h2>Sản phẩm đắt nhất</h2>
+                    <h2 class="section-title">Sản phẩm đắt nhất</h2>
                     <div class="product_grid">
                         @foreach($exs as $p)
                             <div class="product" >

@@ -19,7 +19,6 @@ class WebController extends Controller
 //        if(is_admin()){
 //            die("admin day");
 //        }
-
         $newest =Product::orderBy('created_at','desc')->take(4)->get();
         $cheaps =Product::orderBy('price','asc')->take(4)->get();
         $exs =Product::orderBy('price','desc')->take(4)->get();
@@ -33,20 +32,9 @@ class WebController extends Controller
         $brand_product =Product::where("brand_id",$product->brand_id)->where('id',"!=",$product->id)->take(10)->get();
         return view('product',['product'=>$product,'category_product'=>$category_product,'brand_product'=>$brand_product,'brand'=>$brand]);
     }
-//    public function news(){
-//        return view("news");
-//    }
-//    public function about(){
-//        return view("about");
-//    }
-//    public function delivery(){
-//        return view("delivery");
-//    }
     public function contact(){
         return view("contact");
     }
-//
-//
     public function listing($id){
         $product=Product::paginate(8);//loc theo category
         $category = Category::find($id);
@@ -161,7 +149,7 @@ class WebController extends Controller
             ]);
         }
         session()->forget('cart');
-        Mail::to(Auth::user()->email)->send(new OrderCreated($order));
+//        Mail::to(Auth::user()->email)->send(new OrderCreated($order));
         return redirect()->to("checkout-success");
     }
 
@@ -194,21 +182,15 @@ class WebController extends Controller
             $grand_total+=$p->pivot->qty*$p->price;
 
         }
-
-//        try {
-//            $o = Order::create([
-//                'user_id'=> Auth::id(),
-//                'customer_name'=> $order->customer_name,
-//                'shipping_address'=>$order->shipping_address,
-//                'telephone'=> $order->telephone,
-//                'grand_total'=> $grand_total,
-//                'payment_method'=>$order->payment_method,
-//                "status"=> Order::STATUS_PENDING
-//            ]);
-//        }catch (\Exception $e){
-//            return redirect()->back();
-//        }
-
+            $o = Order::create([
+                'user_id'=> Auth::id(),
+                'customer_name'=> $order->customer_name,
+                'shipping_address'=>$order->shipping_address,
+                'telephone'=> $order->telephone,
+                'grand_total'=> $grand_total,
+                'payment_method'=>$order->payment_method,
+                "status"=> Order::STATUS_PENDING
+            ]);
         foreach ($product as $p){
             DB::table("orders_products")->insert([
                 'orders_id'=> $order->id,
@@ -217,10 +199,19 @@ class WebController extends Controller
                 'price'=>$p->pivot->price
             ]);
         }
-
-
-
         return redirect()->to("checkout-succsses");
+    }
+    public function orderPurchasedDestroy($id){
+        $order=Order::find($id);
+        try {
+            $order->delete();//xoa cung
+            // xoa mem
+            // them 1 truong status : 0: Inactive; 1: active
+            // chuyen status tu 1 -> 0
+        }catch (\Exception $e){
+            return redirect()->back();
+        }
+        return redirect()->to("/");
     }
 }
 

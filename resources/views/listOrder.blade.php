@@ -40,6 +40,7 @@
                     <th>Telephone</th>
                     <th>Payment_method</th>
                     <th>Grand_total</th>
+                    <th>Delete</th>
                 </tr>
                 </thead>
                 <tbody>
@@ -50,6 +51,7 @@
                     <td>{{$p->telephone}}</td>
                     <td>{{$p->payment_method}}</td>
                     <td>{{$p->grand_total}}</td>
+                    <td><a href="{{url("orderPurchasedDestroy/{$p->id}")}}">Delete</a></td>
                 </tr>
                 @empty
                 <h3>Không có đơn hàng</h3>
