@@ -193,7 +193,7 @@ class AdminController extends Controller
     public function productUpdate($id,Request $request){
         $product = Product::find($id);
         $request->validate([
-            "product_name"=> "required|string|unique:product" , // validation laravel
+            "product_name"=> "required|string|unique:product,product_name,".$id , // validation laravel
             "product_desc"=> "required|string",
             "thumnail"=> "required|string|unique:product,thumnail,".$id,
             "gallery"=> "required|string|unique:product,gallery,".$id,
