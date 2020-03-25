@@ -27,6 +27,7 @@ Route::get('/xin-chao',function (){
 /*
  * Luu y : Chay URL tren trinh duyet-> methot GET
  * */
+Route::get("/mail","Auth\RegisterController@mailSend");
 Route::get("/","WebController@home");
 // Route::METHOD(path_string,Controller@function_in_controller);
 Route::get("/danh-muc/{id}","WebController@listingCategory");
