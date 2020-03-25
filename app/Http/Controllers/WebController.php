@@ -4,7 +4,9 @@ namespace App\Http\Controllers;
 
 use App\Brand;
 use App\Category;
+use App\Mail\OrderCancel;
 use App\Mail\OrderCreated;
+use App\Mail\Repurchase;
 use App\Order;
 use App\Product;
 use Illuminate\Http\Request;
@@ -202,6 +204,7 @@ class WebController extends Controller
 //                'price'=>$p->pivot->price
 //            ]);
 //        }
+        Mail::to(Auth::user()->email)->send(new Repurchase($o));
         return redirect()->to("/checkout-success");
     }
     public function checkoutSuccess(){
@@ -217,6 +220,7 @@ class WebController extends Controller
         }catch (\Exception $e){
             return redirect()->back();
         }
+        Mail::to(Auth::user()->email)->send(new OrderCancel());
         return redirect()->to("/");
     }
 }
