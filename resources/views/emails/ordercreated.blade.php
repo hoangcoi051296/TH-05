@@ -584,7 +584,7 @@
                                                                     <tbody>
                                                                     <tr>
                                                                         <td style="text-align: right; font-size: 18px; line-height: 150%;">Subtotal (3 items):</td>
-                                                                        <td style="text-align: right; font-size: 18px; line-height: 150%;">$40.57</td>
+                                                                        <td style="text-align: right; font-size: 18px; line-height: 150%;">{{$order->grand_total}}</td>
                                                                     </tr>
                                                                     <tr>
                                                                         <td style="text-align: right; font-size: 18px; line-height: 150%;">Flat-rate Shipping:</td>
@@ -596,7 +596,7 @@
                                                                     </tr>
                                                                     <tr>
                                                                         <td style="text-align: right; font-size: 18px; line-height: 150%;"><strong>Order Total:</strong></td>
-                                                                        <td style="text-align: right; font-size: 18px; line-height: 150%; color: #d48344;"><strong>$40.57</strong></td>
+                                                                        <td style="text-align: right; font-size: 18px; line-height: 150%; color: #d48344;"><strong>{{$order->grand_total}}</strong></td>
                                                                     </tr>
                                                                     </tbody>
                                                                 </table>
