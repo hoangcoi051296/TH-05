@@ -45,19 +45,22 @@ Route::get("listOrder",'WebController@getListOrder');
 Route::get("viewOrder/{id}",'WebController@getOrderPurchased');
 Route::get("repurchase/{id}",'WebController@repurchase');
 Route::get("orderPurchasedDestroy/{id}",'WebController@orderPurchasedDestroy');
-//Route::get("lknn",function (){
-//    $orders=\App\Order::all();
-//
-//    foreach ($orders as $o){
-//        foreach ($o->Products as $p){
-//            echo $o->id;
-//            echo $p->id;
-//            echo $p->pivot->qty;
-//            echo $p->pivot->price;
-//
-//        };
-//    }
-//});
+Route::get("lknn",function (){
+    $orders=\App\Order::all();
+
+    foreach ($orders as $o){
+        echo $o->id;
+        echo "xxxxx";
+        foreach ($o->Products as $p){
+            dd($p->pivot);
+            echo $o->id;
+            echo $p->id;
+            echo $p->pivot->qty;
+            echo $p->pivot->price;
+
+        };
+    }
+});
 Route::get("sp",function (){
     $product=\App\Product::find(1);
 

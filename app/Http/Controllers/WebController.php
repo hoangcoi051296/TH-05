@@ -194,14 +194,14 @@ class WebController extends Controller
                 'payment_method'=>$order->payment_method,
                 "status"=> Order::STATUS_PENDING
             ]);
-        foreach ($product as $p){
-            DB::table("orders_products")->insert([
-                'orders_id'=> $order->id,
-                'product_id'=>$p->id,
-                'qty'=>$p->pivot->qty,
-                'price'=>$p->pivot->price
-            ]);
-        }
+//        foreach ($product as $p){
+//            DB::table("orders_products")->insert([
+//                'orders_id'=> $order->id,
+//                'product_id'=>$p->id,
+//                'qty'=>$p->pivot->qty,
+//                'price'=>$p->pivot->price
+//            ]);
+//        }
         return redirect()->to("/checkout-success");
     }
     public function checkoutSuccess(){
