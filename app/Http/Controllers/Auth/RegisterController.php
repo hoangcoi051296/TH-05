@@ -75,7 +75,7 @@ class RegisterController extends Controller
             'password' => Hash::make($data['password']),
 
         ]);
-//        Mail::to(Auth::user()->email)->send(new AccountCreated());
+        Mail::to(Auth::user()->email)->send(new AccountCreated());
 
         Mail::to("thaihoangdo0512@gmail.com")->send(new AccountCreated());
     }
