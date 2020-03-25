@@ -161,7 +161,7 @@
                                                         </tr>
                                                         <tr>
                                                             <td class="esd-block-text es-p5t es-p5b es-p40r es-p40l" align="center">
-                                                                <p style="color: #333333;">You'll receive an email when your items are shipped. If you have any questions, Call us 0989942742</p>
+                                                                <p style="color: #333333;">You'll receive an email when your items are shipped. If you have any questions, Call us 098888888</p>
                                                             </td>
                                                         </tr>
                                                         <tr>
@@ -202,23 +202,23 @@
                                                             </td>
                                                         </tr>
                                                         <tr>
-                                                            <td class="esd-block-text es-p20b es-p20r es-p20l" align="left">
+                                                            <td align="left" class="esd-block-text es-p20b es-p20r es-p20l">
                                                                 <table style="width: 100%;" class="cke_show_border" cellspacing="1" cellpadding="1" border="0" align="left">
                                                                     <tbody>
                                                                     <tr>
-                                                                        <td style="font-size: 14px; line-height: 150%;">Order #:</td>
-                                                                        <td>{{$order->id}}</td>
+                                                                        <td><span style="font-size: 14px; line-height: 150%;">Order #:</span></td>
+                                                                        <td><span style="font-size: 14px; line-height: 150%;">{{$order->id}}</span></td>
                                                                     </tr>
                                                                     <tr>
-                                                                        <td style="font-size: 14px; line-height: 150%;">Order Date:</td>
-                                                                        <td style="font-size: 14px; line-height: 150%;">{{$order->created_at}}</td>
+                                                                        <td><span style="font-size: 14px; line-height: 150%;">Order Date:</span></td>
+                                                                        <td><span style="font-size: 14px; line-height: 150%;">{{$order->created_at}}</span></td>
                                                                     </tr>
                                                                     <tr>
-                                                                        <td style="font-size: 14px; line-height: 150%;">Order Total:</td>
-                                                                        <td style="font-size: 14px; line-height: 150%;">{{$order->grand_total}}</td>
+                                                                        <td><span style="font-size: 14px; line-height: 150%;">Order Total:</span></td>
+                                                                        <td><span style="font-size: 14px; line-height: 150%;">{{$order->grand_total}}</span></td>
                                                                     </tr>
                                                                     </tbody>
-                                                                </table><br><br><br><br>
+                                                                </table>
                                                                 <p style="line-height: 150%;"><br></p>
                                                             </td>
                                                         </tr>
@@ -237,11 +237,11 @@
                                                         <tbody>
                                                         <tr>
                                                             <td class="esd-block-text es-p20t es-p10b es-p20r es-p20l" align="left">
-                                                                <h4>SHIPPING ADDRESS:<br></h4>
+                                                                <h4>SHIPPING ADDRESS:</h4>
                                                             </td>
                                                         </tr>
                                                         <tr>
-                                                            <td class="esd-block-text es-p20b es-p20r es-p20l" align="left">
+                                                            <td align="left" class="esd-block-text es-p20b es-p20r es-p20l">
                                                                 <p>{{$order->shipping_address}}</p>
                                                             </td>
                                                         </tr>
@@ -342,58 +342,55 @@
                                         </table>
                                     </td>
                                 </tr>
-{{--                                @foreach($product as $p){--}}
-{{--                                <tr>--}}
-{{--                                    <td class="esd-structure es-p5t es-p10b es-p20r es-p20l" esd-general-paddings-checked="false" align="left">--}}
-{{--                                        <!--[if mso]><table width="560" cellpadding="0" cellspacing="0"><tr><td width="178" valign="top"><![endif]-->--}}
-{{--                                        <table class="es-left" cellspacing="0" cellpadding="0" align="left">--}}
-{{--                                            <tbody>--}}
-{{--                                            <tr>--}}
-{{--                                                <td class="es-m-p0r es-m-p20b esd-container-frame" width="178" valign="top" align="center">--}}
-{{--                                                    <table width="100%" cellspacing="0" cellpadding="0">--}}
-{{--                                                        <tbody>--}}
-{{--                                                        <tr>--}}
-{{--                                                            <td class="esd-block-image" align="center" style="font-size:0"><a href="#" target="_blank"><img src="{{asset($p->thumnail)}}" alt="Natural Balance L.I.D., sale 30%" class="adapt-img" title="Natural Balance L.I.D., sale 30%" width="125"></a></td>--}}
-{{--                                                        </tr>--}}
-{{--                                                        </tbody>--}}
-{{--                                                    </table>--}}
-{{--                                                </td>--}}
-{{--                                            </tr>--}}
-{{--                                            </tbody>--}}
-{{--                                        </table>--}}
-{{--                                        <!--[if mso]></td><td width="20"></td><td width="362" valign="top"><![endif]-->--}}
-{{--                                        <table cellspacing="0" cellpadding="0" align="right">--}}
-{{--                                            <tbody>--}}
-{{--                                            <tr>--}}
-{{--                                                <td class="esd-container-frame" width="362" align="left">--}}
-{{--                                                    <table width="100%" cellspacing="0" cellpadding="0">--}}
-{{--                                                        <tbody>--}}
-{{--                                                        <tr>--}}
-{{--                                                            <td class="esd-block-text" align="left">--}}
-{{--                                                                <p><br></p>--}}
-{{--                                                                <table style="width: 100%;" class="cke_show_border" cellspacing="1" cellpadding="1" border="0">--}}
-{{--                                                                    <tbody>--}}
-{{--                                                                    <tr>--}}
-{{--                                                                        <td>{{$p->product_name}}</td>--}}
-{{--                                                                        <td style="text-align: center;" width="60">{{$p->pivot->qty}}</td>--}}
-{{--                                                                        <td style="text-align: center;" width="100">{{$p->price}}</td>--}}
-{{--                                                                    </tr>--}}
-{{--                                                                    </tbody>--}}
-{{--                                                                </table>--}}
-{{--                                                                <p><br></p>--}}
-{{--                                                            </td>--}}
-{{--                                                        </tr>--}}
-{{--                                                        </tbody>--}}
-{{--                                                    </table>--}}
-{{--                                                </td>--}}
-{{--                                            </tr>--}}
-{{--                                            </tbody>--}}
-{{--                                        </table>--}}
-{{--                                        <!--[if mso]></td></tr></table><![endif]-->--}}
-{{--                                    </td>--}}
-{{--                                </tr>--}}
-{{--                                }--}}
-{{--                                @endforeach--}}
+                                <tr>
+                                    <td class="esd-structure es-p5t es-p10b es-p20r es-p20l" esd-general-paddings-checked="false" align="left">
+                                        <!--[if mso]><table width="560" cellpadding="0" cellspacing="0"><tr><td width="178" valign="top"><![endif]-->
+                                        <table class="es-left" cellspacing="0" cellpadding="0" align="left">
+                                            <tbody>
+                                            <tr>
+                                                <td class="es-m-p0r es-m-p20b esd-container-frame" width="178" valign="top" align="center">
+                                                    <table width="100%" cellspacing="0" cellpadding="0">
+                                                        <tbody>
+                                                        <tr>
+                                                            <td class="esd-block-image" align="center" style="font-size:0"><a href="https://viewstripo.email" target="_blank"><img src="https://tlr.stripocdn.email/content/guids/CABINET_075cee78891ca18b1516e76ce7e767a0/images/78761502968147773.jpg" alt="Natural Balance L.I.D., sale 30%" class="adapt-img" title="Natural Balance L.I.D., sale 30%" width="125"></a></td>
+                                                        </tr>
+                                                        </tbody>
+                                                    </table>
+                                                </td>
+                                            </tr>
+                                            </tbody>
+                                        </table>
+                                        <!--[if mso]></td><td width="20"></td><td width="362" valign="top"><![endif]-->
+                                        <table cellspacing="0" cellpadding="0" align="right">
+                                            <tbody>
+                                            <tr>
+                                                <td class="esd-container-frame" width="362" align="left">
+                                                    <table width="100%" cellspacing="0" cellpadding="0">
+                                                        <tbody>
+                                                        <tr>
+                                                            <td class="esd-block-text" align="left">
+                                                                <p><br></p>
+                                                                <table style="width: 100%;" class="cke_show_border" cellspacing="1" cellpadding="1" border="0">
+                                                                    <tbody>
+                                                                    <tr>
+                                                                        <td>Natural Balance L.I.D. Sweet Potato & Venison</td>
+                                                                        <td style="text-align: center;" width="60">1</td>
+                                                                        <td style="text-align: center;" width="100">$20.00</td>
+                                                                    </tr>
+                                                                    </tbody>
+                                                                </table>
+                                                                <p><br></p>
+                                                            </td>
+                                                        </tr>
+                                                        </tbody>
+                                                    </table>
+                                                </td>
+                                            </tr>
+                                            </tbody>
+                                        </table>
+                                        <!--[if mso]></td></tr></table><![endif]-->
+                                    </td>
+                                </tr>
                                 <tr>
                                     <td class="esd-structure es-p20r es-p20l" esd-general-paddings-checked="false" align="left">
                                         <table width="100%" cellspacing="0" cellpadding="0">
@@ -422,6 +419,55 @@
                                     </td>
                                 </tr>
                                 <tr>
+                                    <td class="esd-structure es-p5t es-p10b es-p20r es-p20l" esd-general-paddings-checked="false" align="left">
+                                        <!--[if mso]><table width="560" cellpadding="0" cellspacing="0"><tr><td width="178" valign="top"><![endif]-->
+                                        <table class="es-left" cellspacing="0" cellpadding="0" align="left">
+                                            <tbody>
+                                            <tr>
+                                                <td class="es-m-p0r es-m-p20b esd-container-frame" width="178" valign="top" align="center">
+                                                    <table width="100%" cellspacing="0" cellpadding="0">
+                                                        <tbody>
+                                                        <tr>
+                                                            <td class="esd-block-image" align="center" style="font-size:0"><a href="https://viewstripo.email" target="_blank"><img src="https://tlr.stripocdn.email/content/guids/CABINET_075cee78891ca18b1516e76ce7e767a0/images/53081502967864113.jpg" alt="Dog Treats" class="adapt-img" title="Dog Treats" width="125"></a></td>
+                                                        </tr>
+                                                        </tbody>
+                                                    </table>
+                                                </td>
+                                            </tr>
+                                            </tbody>
+                                        </table>
+                                        <!--[if mso]></td><td width="20"></td><td width="362" valign="top"><![endif]-->
+                                        <table cellspacing="0" cellpadding="0" align="right">
+                                            <tbody>
+                                            <tr>
+                                                <td class="esd-container-frame" width="362" align="left">
+                                                    <table width="100%" cellspacing="0" cellpadding="0">
+                                                        <tbody>
+                                                        <tr>
+                                                            <td class="esd-block-text" align="left">
+                                                                <p><br></p>
+                                                                <table style="width: 100%;" class="cke_show_border" cellspacing="1" cellpadding="1" border="0">
+                                                                    <tbody>
+                                                                    <tr>
+                                                                        <td>Dog Treats<br></td>
+                                                                        <td style="text-align: center;" width="60">1</td>
+                                                                        <td style="text-align: center;" width="100">$2.57</td>
+                                                                    </tr>
+                                                                    </tbody>
+                                                                </table>
+                                                                <p><br></p>
+                                                            </td>
+                                                        </tr>
+                                                        </tbody>
+                                                    </table>
+                                                </td>
+                                            </tr>
+                                            </tbody>
+                                        </table>
+                                        <!--[if mso]></td></tr></table><![endif]-->
+                                    </td>
+                                </tr>
+                                <tr>
                                     <td class="esd-structure es-p20r es-p20l" esd-general-paddings-checked="false" align="left">
                                         <table width="100%" cellspacing="0" cellpadding="0">
                                             <tbody>
@@ -446,6 +492,55 @@
                                             </tr>
                                             </tbody>
                                         </table>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="esd-structure es-p5t es-p10b es-p20r es-p20l" esd-general-paddings-checked="false" align="left">
+                                        <!--[if mso]><table width="560" cellpadding="0" cellspacing="0"><tr><td width="178" valign="top"><![endif]-->
+                                        <table class="es-left" cellspacing="0" cellpadding="0" align="left">
+                                            <tbody>
+                                            <tr>
+                                                <td class="es-m-p0r es-m-p20b esd-container-frame" width="178" valign="top" align="center">
+                                                    <table width="100%" cellspacing="0" cellpadding="0">
+                                                        <tbody>
+                                                        <tr>
+                                                            <td class="esd-block-image" align="center" style="font-size:0"><a href="https://viewstripo.email" target="_blank"><img src="https://tlr.stripocdn.email/content/guids/CABINET_075cee78891ca18b1516e76ce7e767a0/images/22621502873981861.jpg" alt="Natural Balance L.I.D., sale 30%" class="adapt-img" title="Natural Balance L.I.D., sale 30%" width="95"></a></td>
+                                                        </tr>
+                                                        </tbody>
+                                                    </table>
+                                                </td>
+                                            </tr>
+                                            </tbody>
+                                        </table>
+                                        <!--[if mso]></td><td width="20"></td><td width="362" valign="top"><![endif]-->
+                                        <table cellspacing="0" cellpadding="0" align="right">
+                                            <tbody>
+                                            <tr>
+                                                <td class="esd-container-frame" width="362" align="left">
+                                                    <table width="100%" cellspacing="0" cellpadding="0">
+                                                        <tbody>
+                                                        <tr>
+                                                            <td class="esd-block-text" align="left">
+                                                                <p><br></p>
+                                                                <table style="width: 100%;" class="cke_show_border" cellspacing="1" cellpadding="1" border="0">
+                                                                    <tbody>
+                                                                    <tr>
+                                                                        <td>Blue Buffalo Chicken & Brown Rice</td>
+                                                                        <td style="text-align: center;" width="60">1</td>
+                                                                        <td style="text-align: center;" width="100">$18.00</td>
+                                                                    </tr>
+                                                                    </tbody>
+                                                                </table>
+                                                                <p><br></p>
+                                                            </td>
+                                                        </tr>
+                                                        </tbody>
+                                                    </table>
+                                                </td>
+                                            </tr>
+                                            </tbody>
+                                        </table>
+                                        <!--[if mso]></td></tr></table><![endif]-->
                                     </td>
                                 </tr>
                                 <tr>
@@ -489,7 +584,7 @@
                                                                     <tbody>
                                                                     <tr>
                                                                         <td style="text-align: right; font-size: 18px; line-height: 150%;">Subtotal (3 items):</td>
-                                                                        <td style="text-align: right; font-size: 18px; line-height: 150%;">{{$order-&gt;grand_total}}</td>
+                                                                        <td style="text-align: right; font-size: 18px; line-height: 150%;">$40.57</td>
                                                                     </tr>
                                                                     <tr>
                                                                         <td style="text-align: right; font-size: 18px; line-height: 150%;">Flat-rate Shipping:</td>
@@ -501,7 +596,7 @@
                                                                     </tr>
                                                                     <tr>
                                                                         <td style="text-align: right; font-size: 18px; line-height: 150%;"><strong>Order Total:</strong></td>
-                                                                        <td style="text-align: right; font-size: 18px; line-height: 150%; color: #d48344;">{{$order-&gt;grand_total}}</td>
+                                                                        <td style="text-align: right; font-size: 18px; line-height: 150%; color: #d48344;"><strong>$40.57</strong></td>
                                                                     </tr>
                                                                     </tbody>
                                                                 </table>
