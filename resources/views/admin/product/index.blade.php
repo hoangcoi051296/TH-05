@@ -45,9 +45,9 @@
                             <a href="{{url("admin/product/edit",['id'=>$p->id])}}"class="item" data-toggle="tooltip" data-placement="top" title="Edit">>
                                 <i class="zmdi zmdi-edit"></i>
                             </a>
-                            <button class="item" data-toggle="tooltip" data-placement="top" title="Delete">
+                            <a href="{{url("admin/product/delete",['id'=>$p->id])}}" class="item" data-toggle="tooltip" data-placement="top" title="Delete">
                                 <i class="zmdi zmdi-delete"></i>
-                            </button>
+                            </a>
                         </div>
                     </td>
                 </tr>

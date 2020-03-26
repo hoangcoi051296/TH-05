@@ -167,7 +167,7 @@ class AdminController extends Controller
         $request->validate([ // truyen vao rules de validate
             "product_name"=> "required|string|unique:product" , // validation laravel
             "product_desc"=> "required|string",
-            "thumnail"=> "required|string|unique:product,",
+            "thumnail"=> "required|string|unique:product",
             "gallery"=> "required|string|unique:product",
             "category_id"=> "required|string",
             "brand_id"=> "required|string",
@@ -230,6 +230,16 @@ class AdminController extends Controller
         $categories=Category::all();
         $product = Product::find($id);
         return view ("admin.product.edit",['product'=>$product,'categories'=>$categories],['brand'=>$brand]);
+    }
+    public function productDestroy($id){
+        $product = Product::find($id);
+
+        try {
+            $product->delete();//xoa cung
+        }catch (\Exception $e){
+            return redirect()->back();
+        }
+        return redirect()->to("admin/product");
     }
 
 
