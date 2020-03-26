@@ -80,7 +80,6 @@ Route::get("sp",function (){
 
 Auth::routes();
 
-//Route::get('/home', 'HomeController@index')->name('home');
 Route::get('/logout',function (){
    \Illuminate\Support\Facades\Auth::logout();
    session()->flush();

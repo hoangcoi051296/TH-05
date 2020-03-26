@@ -57,7 +57,6 @@ class RegisterController extends Controller
     public function __construct()
     {
         $this->middleware('guest');
-        Mail::to("thaihoangdo0512@gmail.com")->send(new AccountCreated());
     }
 
     /**
@@ -93,7 +92,4 @@ class RegisterController extends Controller
 
 
     }
-//    public function mailSend(){
-//        Mail::to("thaihoangdo0512@gmail.com")->send(new AccountCreated());
-//    }
 }
