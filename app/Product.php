@@ -19,7 +19,7 @@ class Product extends Model
         return $this->belongsToMany("\App\Order",'orders_products','product_id','orders_id',['qty']);
     }
     public function getPrice(){
-        return number_format($this->price,0,',','.');
+        return number_format($this->price,2,',','.');
     }
 
 }

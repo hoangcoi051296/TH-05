@@ -5,6 +5,7 @@ Route::get('user','AdminController@user');
 Route ::get('user/edit/{id}',"AdminController@userEdit");
 Route::post('user/update/{id}',"AdminController@userUpdate");
 
+Route::get('listOrder','AdminController@order');
 
 Route ::get('product',"AdminController@product");
 Route::get('product/create',"AdminController@productCreate");

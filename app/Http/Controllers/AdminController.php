@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Brand;
 use App\Category;
+use App\Order;
 use App\Product;
 use App\User;
 use Illuminate\Http\Request;
@@ -25,11 +26,16 @@ class AdminController extends Controller
     public function userUpdate($id,Request $request){
         $users = User::find($id);
         $request->validate([
+            "name"=>"required|string",
+            "email"=>"required|string|unique:users,name,".$id,
             "role"=> "required|boolean"  // validation laravel
         ]);
         try {
             $users->update([
+                "name"=>$request->get('name'),
+                "email"=>$request->get('email'),
                 "role"=>$request->get('role')
+
             ]);
 
         }catch (\Exception $e){
@@ -227,7 +233,10 @@ class AdminController extends Controller
     }
 
 
-
+    public function order(){
+        $order=Order::paginate(10);
+        return view('admin.order.index',['order'=>$order]);
+    }
 
 
 

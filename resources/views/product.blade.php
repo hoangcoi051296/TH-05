@@ -35,10 +35,9 @@
                     <div class="details_image">
                         <div class="details_image_large"><img src="{{$product->thumnail}}" alt=""><div class="product_extra"></div></div>
                         <div class="details_image_thumbnails d-flex flex-row align-items-start justify-content-between">
-                            <div class="details_image_thumbnail active" data-image="images/details_1.jpg"><img src="{{$product->thumnail}}" alt=""></div>
-                            <div class="details_image_thumbnail" data-image="images/details_2.jpg"><img src="{{$product->thumnail}}" alt=""></div>
-                            <div class="details_image_thumbnail" data-image="images/details_3.jpg"><img src="{{$product->thumnail}}" alt=""></div>
-                            <div class="details_image_thumbnail" data-image="images/details_4.jpg"><img src="{{$product->thumnail}}" alt=""></div>
+                            @foreach($img as $i)
+                            <div class="details_image_thumbnail active" data-image="images/details_1.jpg"><img src="{{$i}}" alt=""></div>
+                            @endforeach
                         </div>
                     </div>
                 </div>
@@ -47,8 +46,8 @@
                 <div class="col-lg-6">
                     <div class="details_content">
                         <div class="details_name">{{$product->product_name}}</div>
-                        <div class="details_discount">{{$product->price}} $php</div>
-                        <div class="details_price">{{($product->price*95/100)}} $</div>
+                        <div class="details_discount">${{$product->getprice()}} </div>
+                        <div class="details_price">{{($product->getprice())}} $</div>
 
                         <!-- In Stock -->
                         <div class="in_stock_container">

@@ -45,7 +45,7 @@
             </div>
             <div class="row cart_items_row">
                 <div class="col">
-
+                    @php $total = 0; @endphp
                     <!-- Cart Item -->
                     @forelse($product as $p)
                         <div class="cart_item d-flex flex-lg-row flex-column align-items-lg-center align-items-start justify-content-start">
@@ -60,7 +60,7 @@
                                 </div>
                             </div>
                             <!-- Price -->
-                            <div class="cart_item_price">{{$p->price}}</div>
+                            <div class="cart_item_price">${{$p->getprice()}}</div>
                             <!-- Quantity -->
                             <div class="cart_item_quantity">
                                 <div class="product_quantity_container">
@@ -71,7 +71,9 @@
                                 </div>
                             </div>
                             <!-- Total -->
-                            <div class="cart_item_total">{{$p->pivot->qty*$p->price}}</div>
+                            <div class="cart_item_total">${{$p->pivot->qty*$p->price}}</div>
+                            @php $total+=($p->pivot->qty*$p->price) @endphp
+
                         </div>
                     @empty
                         <h3>Không có sản phẩm nào trong giỏ hàng</h3>
@@ -124,7 +126,7 @@
                             <ul>
                                 <li class="d-flex flex-row align-items-center justify-content-start">
                                     <div class="cart_total_title">Subtotal</div>
-                                    <div class="cart_total_value ml-auto">xx</div>
+                                    <div class="cart_total_value ml-auto">${{number_format($total,2,',','.')}}</div>
                                 </li>
                                 <li class="d-flex flex-row align-items-center justify-content-start">
                                     <div class="cart_total_title">Shipping</div>
@@ -132,7 +134,7 @@
                                 </li>
                                 <li class="d-flex flex-row align-items-center justify-content-start">
                                     <div class="cart_total_title">Total</div>
-                                    <div class="cart_total_value ml-auto">xx</div>
+                                    <div class="cart_total_value ml-auto">${{number_format($total,2,',','.')}}</div>
                                 </li>
                             </ul>
                         </div>

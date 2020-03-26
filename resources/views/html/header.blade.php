@@ -112,24 +112,40 @@
                 <li class="page_menu_item has-children menu_mm">
                     <a href="index.html">Home<i class="fa fa-angle-down"></i></a>
                     <ul class="page_menu_selection menu_mm">
-                        <li class="page_menu_item menu_mm"><a href="categories.html">Categories<i class="fa fa-angle-down"></i></a></li>
-                        <li class="page_menu_item menu_mm"><a href="product.html">Product<i class="fa fa-angle-down"></i></a></li>
-                        <li class="page_menu_item menu_mm"><a href="cart.html">Cart<i class="fa fa-angle-down"></i></a></li>
-                        <li class="page_menu_item menu_mm"><a href="checkout.html">Checkout<i class="fa fa-angle-down"></i></a></li>
-                        <li class="page_menu_item menu_mm"><a href="contact.html">Contact<i class="fa fa-angle-down"></i></a></li>
+                        <li class="page_menu_item menu_mm"><a href="#">Categories<i class="fa fa-angle-down"></i></a></li>
+                        <li class="page_menu_item menu_mm"><a href="#">Brand<i class="fa fa-angle-down"></i></a></li>
+                        <li class="page_menu_item menu_mm"><a href="{{url("cart")}}">Cart<i class="fa fa-angle-down"></i></a></li>
+                        <li class="page_menu_item menu_mm"><a href="{{url("/contact")}}">Contact<i class="fa fa-angle-down"></i></a></li>
                     </ul>
                 </li>
                 <li class="page_menu_item has-children menu_mm">
-                    <a href="categories.html">Categories<i class="fa fa-angle-down"></i></a>
+                    <a href="#">Categories<i class="fa fa-angle-down"></i></a>
                     <ul class="page_menu_selection menu_mm">
                         @foreach(\App\Category::all() as $c)
                             <li class="page_menu_item menu_mm"><a href="{{url("/danh-muc/{$c->id}")}}">{{$c->category_name}}</a></li>
                         @endforeach
                     </ul>
                 </li>
-                <li class="page_menu_item menu_mm"><a href="index.html">Accessories<i class="fa fa-angle-down"></i></a></li>
-                <li class="page_menu_item menu_mm"><a href="#">Offers<i class="fa fa-angle-down"></i></a></li>
-                <li class="page_menu_item menu_mm"><a href="contact.html">Contact<i class="fa fa-angle-down"></i></a></li>
+                <li class="page_menu_item has-children menu_mm">
+                    <a href="#">Brand<i class="fa fa-angle-down"></i></a>
+                    <ul class="page_menu_selection menu_mm">
+                        @foreach(\App\Brand::all() as $c)
+                            <li class="page_menu_item menu_mm"><a href="{{url("/thuong-hieu/{$c->id}")}}">{{$c->brand_name}}</a></li>
+                        @endforeach
+                    </ul>
+                </li>
+                <li class ="page_menu_item has-children menu_mm"><a href="{{url("/contact")}}">Contact</a></li>
+                <li class="page_menu_item has-children menu_mm">
+                    <a href="#">Account<i class="fa fa-angle-down"></i></a>
+                    <ul  class="page_menu_selection menu_mm">
+                        <li class="page_menu_item menu_mm"><a href="{{url("/login")}}">Sign in</a></li>
+                        <li class="page_menu_item menu_mm"><a href="{{url("/logout")}}">Sign out</a></li>
+                        <li class="page_menu_item menu_mm"><a href="{{url("/register")}}">Register</a></li>
+                    </ul>
+                </li>
+
+
+
             </ul>
         </div>
     </div>

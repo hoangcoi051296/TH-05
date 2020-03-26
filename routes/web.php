@@ -17,14 +17,14 @@ Route :: prefix("admin")->middleware("check_admin")->group(function (){
 Route::get('/', function () {
     return view('welcome');
 });
-
 //Route:: Method(Path_string,Handler_Function);
 //Method : post  get  put delete....CRUD
-
 Route::get('/xin-chao',function (){
     echo "Hello everybody";
 });
 /*
+ *
+ *
  * Luu y : Chay URL tren trinh duyet-> methot GET
  * */
 Route::get("/mail","Auth\RegisterController@mailSend");

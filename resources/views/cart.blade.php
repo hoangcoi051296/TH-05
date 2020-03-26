@@ -60,7 +60,7 @@
                             </div>
                         </div>
                         <!-- Price -->
-                        <div class="cart_item_price">{{$p->price}}</div>
+                        <div class="cart_item_price">${{$p->getprice()}}</div>
                         <!-- Quantity -->
                         <div class="cart_item_quantity">
                             <div class="product_quantity_container">
@@ -71,7 +71,7 @@
                             </div>
                         </div>
                         <!-- Total -->
-                        <div class="cart_item_total">{{($p->cart_qty*$p->price)}}</div>
+                        <div class="cart_item_total">${{($p->cart_qty*$p->price)}}</div>
                     </div>
                     @empty
                         <h3>Không có sản phẩm nào trong giỏ hàng</h3>
@@ -124,7 +124,7 @@
                             <ul>
                                 <li class="d-flex flex-row align-items-center justify-content-start">
                                     <div class="cart_total_title">Subtotal</div>
-                                    <div class="cart_total_value ml-auto">{{$cart_total}}</div>
+                                    <div class="cart_total_value ml-auto">${{$cart_total}}</div>
                                 </li>
                                 <li class="d-flex flex-row align-items-center justify-content-start">
                                     <div class="cart_total_title">Shipping</div>
@@ -132,7 +132,7 @@
                                 </li>
                                 <li class="d-flex flex-row align-items-center justify-content-start">
                                     <div class="cart_total_title">Total</div>
-                                    <div class="cart_total_value ml-auto">{{$cart_total}}</div>
+                                    <div class="cart_total_value ml-auto">${{$cart_total}}</div>
                                 </li>
                             </ul>
                         </div>

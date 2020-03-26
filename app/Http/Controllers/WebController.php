@@ -30,9 +30,10 @@ class WebController extends Controller
     public function product($id){
         $product=Product::find($id);//tra ve 1 object product theo id
         $brand = Brand::find($product->brand_id);
+        $img =explode(",",$product->gallery);
         $category_product =Product::where("category_id",$product->category_id)->where('id',"!=",$product->id)->take(10)->get();
         $brand_product =Product::where("brand_id",$product->brand_id)->where('id',"!=",$product->id)->take(10)->get();
-        return view('product',['product'=>$product,'category_product'=>$category_product,'brand_product'=>$brand_product,'brand'=>$brand]);
+        return view('product',['product'=>$product,'category_product'=>$category_product,'brand_product'=>$brand_product,'brand'=>$brand,'img'=>$img]);
     }
     public function contact(){
         return view("contact");
@@ -175,10 +176,10 @@ class WebController extends Controller
     public function getOrderPurchased($id){
         $order = Order::find($id);
          $product=$order->Products;
-        return view('viewOrder',['product'=>$product]);
+        return view('viewOrder',['product'=>$product,'order'=>$order]);
     }
 
-    public function repurchase($id){
+    public function repurchase($id,Request $request){
         $order = Order::find($id);
         $product=$order->Products;
 
@@ -196,14 +197,14 @@ class WebController extends Controller
                 'payment_method'=>$order->payment_method,
                 "status"=> Order::STATUS_PENDING
             ]);
-//        foreach ($product as $p){
-//            DB::table("orders_products")->insert([
-//                'orders_id'=> $order->id,
-//                'product_id'=>$p->id,
-//                'qty'=>$p->pivot->qty,
-//                'price'=>$p->pivot->price
-//            ]);
-//        }
+        foreach ($product as $p){
+            DB::table("orders_products")->insert([
+                'orders_id'=> $o->id,
+                'product_id'=>$p->id,
+                'qty'=>$p->pivot->qty,
+                'price'=>$p->pivot->price
+            ]);
+        }
         Mail::to(Auth::user()->email)->send(new Repurchase($o));
         return redirect()->to("/checkout-success");
     }

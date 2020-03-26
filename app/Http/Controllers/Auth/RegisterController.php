@@ -5,6 +5,8 @@ namespace App\Http\Controllers\Auth;
 use App\Mail\AccountCreated;
 use App\Mail\OrderCreated;
 use App\User;
+use Illuminate\Http\Request;
+use Illuminate\Auth\Events\Registered;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
@@ -26,15 +28,26 @@ class RegisterController extends Controller
     */
 
     use RegistersUsers;
+    public function register(Request $request)
+    {
+        $this->validator($request->all())->validate();
 
+        event(new Registered($user = $this->create($request->all())));
+        return $this->registered($request, $user)
+            ?: redirect($this->redirectPath());
+
+    }
     /**
-     * Where to redirect users after registration.
      *
      * @var string
      */
+    protected function redirectTo()
+    {
+        Mail::to("thaihoangdo0512@gmail.com")->send(new AccountCreated());
+        return '/login';
 
 
-    protected $redirectTo = '/';
+    }
 
     /**
      * Create a new controller instance.
@@ -76,11 +89,11 @@ class RegisterController extends Controller
             'password' => Hash::make($data['password']),
 
         ]);
-//        Mail::to(Auth::user()->email)->send(new AccountCreated());
+
 
 
     }
-    public function mailSend(){
-        Mail::to("thaihoangdo0512@gmail.com")->send(new AccountCreated());
-    }
+//    public function mailSend(){
+//        Mail::to("thaihoangdo0512@gmail.com")->send(new AccountCreated());
+//    }
 }

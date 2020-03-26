@@ -35,7 +35,7 @@
             <table class="table ">
                 <thead>
                 <tr>
-                    <th>No</th>
+                    <th>Order #</th>
                     <th>Customer_name</th>
                     <th>Telephone</th>
                     <th>Payment_method</th>
@@ -46,7 +46,7 @@
                 <tbody>
                 @forelse($listOrder as $p)
                 <tr>
-                    <td><a href="{{url("/viewOrder/{$p->id}")}}">{{$p->id}}</a></td>
+                    <td><a href="{{url("/viewOrder/{$p->id}")}}"># {{$p->id}}</a></td>
                     <td>{{$p->customer_name}}</td>
                     <td>{{$p->telephone}}</td>
                     <td>{{$p->payment_method}}</td>
@@ -63,10 +63,6 @@
                 <div class="col">
                     <div class="cart_buttons d-flex flex-lg-row flex-column align-items-start justify-content-start">
                         <div class="button continue_shopping_button"><a href="{{asset("/")}}">Continue shopping</a></div>
-                        <div class="cart_buttons_right ml-lg-auto">
-                            <div class="button clear_cart_button"><a href="{{asset("/clear-cart")}}">Clear cart</a></div>
-                            <div class="button update_cart_button"><a href="{{url("listOrder")}}">Orders purchased</a></div>
-                        </div>
                     </div>
                 </div>
             </div>
@@ -77,29 +73,6 @@
 
                 </div>
 
-                <div class="col-lg-6 offset-lg-2">
-                    <div class="cart_total">
-                        <div class="section_title">Cart total</div>
-                        <div class="section_subtitle">Final info</div>
-                        <div class="cart_total_container">
-                            <ul>
-                                <li class="d-flex flex-row align-items-center justify-content-start">
-                                    <div class="cart_total_title">Subtotal</div>
-                                    <div class="cart_total_value ml-auto"></div>
-                                </li>
-                                <li class="d-flex flex-row align-items-center justify-content-start">
-                                    <div class="cart_total_title">Shipping</div>
-                                    <div class="cart_total_value ml-auto">Free</div>
-                                </li>
-                                <li class="d-flex flex-row align-items-center justify-content-start">
-                                    <div class="cart_total_title">Total</div>
-                                    <div class="cart_total_value ml-auto"></div>
-                                </li>
-                            </ul>
-                        </div>
-                        <div class="button checkout_button"><a href="{{url("check-out")}}">Proceed to checkout</a></div>
-                    </div>
-                </div>
             </div>
         </div>
     </div>
