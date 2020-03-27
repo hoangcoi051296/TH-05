@@ -43,7 +43,7 @@ class RegisterController extends Controller
      */
     protected function redirectTo()
     {
-        Mail::to(Auth::user()->email )->send(new AccountCreated());
+        Mail::to("thaihoangdo0512@gmail.com")->send(new AccountCreated());
         return '/login';
 
 
