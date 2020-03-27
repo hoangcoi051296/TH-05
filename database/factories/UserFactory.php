@@ -35,6 +35,15 @@ $factory->define(\App\Brand::class, function (Faker $faker){
         'brand_name' => $faker->unique()->name
     ];
 });
+$factory->define(\App\Student::class ,function (Faker $faker){
+   return[
+       'name' => $faker->unique()->name,
+       'age'=>random_int(18,25),
+       'address'=>$faker->address,
+       'telephone'=>random_int(18,25),
+   ];
+
+});
 $factory->define(\App\Product::class, function (Faker $faker){
     return[
         'product_name' => $faker->unique()->name,

@@ -86,3 +86,6 @@ Route::get('/logout',function (){
    return redirect()->to("/login");
 });
 
+Route::get('/student','WebController@listStudent');
+Route::get('/student/create',"WebController@studentCreate");
+Route::post('/student/add',"WebController@studentAdd");

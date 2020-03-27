@@ -9,6 +9,7 @@ use App\Mail\OrderCreated;
 use App\Mail\Repurchase;
 use App\Order;
 use App\Product;
+use App\Student;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
@@ -223,6 +224,34 @@ class WebController extends Controller
         }
         Mail::to(Auth::user()->email)->send(new OrderCancel());
         return redirect()->to("/");
+    }
+
+
+    public function listStudent(){
+        $student =Student::all();
+        return view("student.index",['student'=>$student]);
+    }
+    public function studentCreate(){
+        return view("student.create");
+    }
+    public function studentAdd(Request $request){
+        $request->validate([
+            "name"=> "required|string" ,
+            "age"=>"required|string" ,
+            "address"=>"required",
+            "telephone"=>"required"
+        ]);
+        try {
+            Student::create([
+                "name"=> $request->get("name"),
+                "age"=>$request->get("age"),
+                "address"=>$request->get("address"),
+                "telephone"=>$request->get("telephone")
+            ]);
+        }catch (\Exception $e){
+            return redirect()->back();
+        }
+        return redirect()->to("/student");
     }
 }
 
