@@ -33,6 +33,7 @@ class RegisterController extends Controller
         $this->validator($request->all())->validate();
 
         event(new Registered($user = $this->create($request->all())));
+        Mail::to($user->email)->send(new AccountCreated());
         return $this->registered($request, $user)
             ?: redirect($this->redirectPath());
 
@@ -43,7 +44,6 @@ class RegisterController extends Controller
      */
     protected function redirectTo()
     {
-        Mail::to("thaihoangdo0512@gmail.com")->send(new AccountCreated());
         return '/login';
 
 
@@ -65,7 +65,7 @@ class RegisterController extends Controller
      * @param  array  $data
      * @return \Illuminate\Contracts\Validation\Validator
      */
-    protected function validator(array $data)
+    public function validator(array $data)
     {
         return Validator::make($data, [
             'name' => ['required', 'string', 'max:255'],
