@@ -392,7 +392,8 @@
                                             <!--[if mso]></td></tr></table><![endif]-->
                                         </td>
                                     </tr>
-                                    @endforeach
+
+                                @endforeach
                                 <tr>
                                     <td class="esd-structure es-p5t es-p10b es-p20r es-p20l" esd-general-paddings-checked="false" align="left">
                                         <!--[if mso]><table width="560" cellpadding="0" cellspacing="0"><tr><td width="178" valign="top"><![endif]-->
