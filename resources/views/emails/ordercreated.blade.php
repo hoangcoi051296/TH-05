@@ -342,6 +342,57 @@
                                         </table>
                                     </td>
                                 </tr>
+                                @foreach($cart as $p)
+                                    <tr>
+                                        <td class="esd-structure es-p5t es-p10b es-p20r es-p20l" esd-general-paddings-checked="false" align="left">
+                                            <!--[if mso]><table width="560" cellpadding="0" cellspacing="0"><tr><td width="178" valign="top"><![endif]-->
+                                            <table class="es-left" cellspacing="0" cellpadding="0" align="left">
+                                                <tbody>
+                                                <tr>
+                                                    <td class="es-m-p0r es-m-p20b esd-container-frame" width="178" valign="top" align="center">
+                                                        <table width="100%" cellspacing="0" cellpadding="0">
+                                                            <tbody>
+                                                            <tr>
+                                                                <td class="esd-block-image" align="center" style="font-size:0"><a href="#" target="_blank"><img src="{{asset($p->thumnail)}}" alt="Natural Balance L.I.D., sale 30%" class="adapt-img" title="Natural Balance L.I.D., sale 30%" width="125"></a></td>
+                                                            </tr>
+                                                            </tbody>
+                                                        </table>
+                                                    </td>
+                                                </tr>
+                                                </tbody>
+                                            </table>
+                                            <!--[if mso]></td><td width="20"></td><td width="362" valign="top"><![endif]-->
+                                            <table cellspacing="0" cellpadding="0" align="right">
+                                                <tbody>
+                                                <tr>
+                                                    <td class="esd-container-frame" width="362" align="left">
+                                                        <table width="100%" cellspacing="0" cellpadding="0">
+                                                            <tbody>
+                                                            <tr>
+                                                                <td class="esd-block-text" align="left">
+                                                                    <p><br></p>
+                                                                    <table style="width: 100%;" class="cke_show_border" cellspacing="1" cellpadding="1" border="0">
+                                                                        <tbody>
+                                                                        <tr>
+                                                                            <td>{{$p->product_name}}</td>
+                                                                            <td style="text-align: center;" width="60">{{$p->cart_qty}}</td>
+                                                                            <td style="text-align: center;" width="100">{{$p->cart_qty * $p->price}}</td>
+                                                                        </tr>
+                                                                        </tbody>
+                                                                    </table>
+                                                                    <p><br></p>
+                                                                </td>
+                                                            </tr>
+                                                            </tbody>
+                                                        </table>
+                                                    </td>
+                                                </tr>
+                                                </tbody>
+                                            </table>
+                                            <!--[if mso]></td></tr></table><![endif]-->
+                                        </td>
+                                    </tr>
+                                    @endforeach
                                 <tr>
                                     <td class="esd-structure es-p5t es-p10b es-p20r es-p20l" esd-general-paddings-checked="false" align="left">
                                         <!--[if mso]><table width="560" cellpadding="0" cellspacing="0"><tr><td width="178" valign="top"><![endif]-->

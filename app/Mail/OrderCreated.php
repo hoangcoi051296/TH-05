@@ -32,7 +32,8 @@ public $order;
      */
     public function build()
     {
-        return $this->markdown('emails.ordercreated')->with(['order'=>$this->order]);
+        $cart =session()->get('cart');
+        return $this->markdown('emails.ordercreated')->with(['order'=>$this->order])->with(['cart'=>$cart]);
 
     }
 }
