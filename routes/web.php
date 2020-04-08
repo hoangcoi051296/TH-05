@@ -62,17 +62,15 @@ Route::get("lknn",function (){
         };
     }
 });
-Route::get("sp",function (){
-    $product=\App\Product::find(1);
+Route::get("test",function (){
+    $cart =session()->get('cart');
 
 
-        echo $product->product_name;
-        echo $product->thumnail;
-      $img =explode(",",$product->gallery);
-      foreach ($img as $i){
-          echo $i;
-          echo"<\bđar>";
-      }
+    foreach ($cart as $c){
+        dd($c->id);
+    }
+
+
 
 
 });

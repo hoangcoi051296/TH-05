@@ -10,8 +10,10 @@ use App\Mail\Repurchase;
 use App\Order;
 use App\Product;
 use App\Student;
+use Carbon\Carbon;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Cache;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Mail;
 use mysql_xdevapi\Exception;
@@ -22,10 +24,22 @@ class WebController extends Controller
 //        if(is_admin()){
 //            die("admin day");
 //        }
-        $newest =Product::orderBy('created_at','desc')->take(4)->get();
-        $cheaps =Product::orderBy('price','asc')->take(4)->get();
-        $exs =Product::orderBy('price','desc')->take(4)->get();
-        return view("home",['newest'=>$newest,'cheaps'=>$cheaps,'exs'=>$exs]);
+        if(!Cache::has("home")){
+            $cache = [];
+            $cache['newest'] = Product::orderBy('created_at','desc')->take(4)->get();
+            $cache['cheaps'] = Product::orderBy('price','asc')->take(4)->get();
+            $cache['exs'] = orderBy('price','desc')->take(4)->get();
+
+            $newest = $cache['newest'];
+            $cheaps = $cache['cheaps'];
+            $exs = $cache['exs'];
+            $view = view("home",['newest'=>$newest,'cheaps'=>$cheaps,'exs'=>$exs])->render();
+
+            $now = Carbon::now();
+            $expireDate = $now->addHours(2);
+            Cache::put("home",$view,$expireDate);
+        }
+        return Cache::get("home");
     }
 
     public function product($id){
