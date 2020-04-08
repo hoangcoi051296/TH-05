@@ -28,7 +28,7 @@ class WebController extends Controller
             $cache = [];
             $cache['newest'] = Product::orderBy('created_at','desc')->take(4)->get();
             $cache['cheaps'] = Product::orderBy('price','asc')->take(4)->get();
-            $cache['exs'] = orderBy('price','desc')->take(4)->get();
+            $cache['exs'] = Product:: orderBy('price','desc')->take(4)->get();
 
             $newest = $cache['newest'];
             $cheaps = $cache['cheaps'];
