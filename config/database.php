@@ -15,7 +15,7 @@ return [
     |
     */
 
-    'default' =>"pgsql",//env('DB_CONNECTION', 'mysql'),//
+    "pgsql",// 'default' =>env('DB_CONNECTION', 'mysql'),//
 
     /*
     |--------------------------------------------------------------------------
@@ -67,10 +67,10 @@ return [
             'driver' => 'pgsql',
             'url' => env('DATABASE_URL'),
             'host' =>"ec2-3-231-46-238.compute-1.amazonaws.com",//env('DB_HOST', '127.0.0.1'),//
-            'port' =>5432,//env('DB_PORT', '5432'),
-            'database' => "d2jtmdft884egd",//env('DB_DATABASE', 'forge'),
-            'username' =>"lezwydnloobxao" ,// env('DB_USERNAME', 'forge'),//
-            'password' =>"199241b5fb55f4454075e58b995405435da37b84baeed99f85ace1924082ffcf",//env('DB_PASSWORD', ''),//
+            'port' =>5432,//env('DB_PORT', '5432'),//
+            'database' =>"dfig248dclr6ed",// env('DB_DATABASE', 'forge'),//
+            'username' => "wdmsascbwiqhsg" ,//env('DB_USERNAME', 'forge'),//
+            'password' =>"c1c659b584115150e17ccb1ee66cae89f100b352efa53412912785838d5bec57",//env('DB_PASSWORD', ''),//
             'charset' => 'utf8',
             'prefix' => '',
             'prefix_indexes' => true,
