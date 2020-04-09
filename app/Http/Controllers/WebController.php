@@ -267,6 +267,10 @@ class WebController extends Controller
         }
         return redirect()->to("/student");
     }
+    public function aaalistStudent(){
+        $student =Student::all();
+        return view("student.index",['student'=>$student]);
+    }
 }
 
 
