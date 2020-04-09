@@ -57,8 +57,21 @@ class AdminController extends Controller
             "category_name"=> "required|string|unique:category"  // validation laravel
         ]);
         try {
+            $image = null;
+            $ext_allow = ["png","jpg","jpeg","gif","svg"];
+            if($request->hasFile("image")){
+                // neu nhieu file
+                $file = $request->file("image");// array neu gui len dang multifile
+                $file_name = time()."-".$file->getClientOriginalName(); // lay ten file
+                $ext = $file->getClientOriginalExtension(); // lay duoi file
+                if(in_array($ext,$ext_allow)){
+                    $file->move("upload/category",$file_name);
+                    $image = "upload/category/".$file_name;
+                }
+            }
             Category::create([
-                "category_name"=> $request->get("category_name")
+                "category_name"=> $request->get("category_name"),
+                'image'=>$image
             ]);
         }catch (\Exception $e){
             return redirect()->back();
@@ -73,12 +86,24 @@ class AdminController extends Controller
         $category = Category::find($id);
         $request->validate([
             "category_name"=> "required|string|unique:category,category_name,".$id  // validation laravel
+
         ]);
         try {
+            $image = null;
+            $ext_allow = ["png","jpg","jpeg","gif","svg"];
+            if($request->hasFile("image")){
+                $file = $request->file("image");
+                $file_name = time()."_".$file->getClientOriginalName();
+                $ext = $file->getClientOriginalExtension();
+                if(in_array($ext,$ext_allow)){
+                    $file->move("upload/category",$file_name);
+                    $image = "upload/category/".$file_name;
+                }
+            }
             $category->update([
-                "category_name"=>$request->get('category_name')
+                "category_name"=> $request->get('category_name'),
+                'image'=>$image
             ]);
-
         }catch (\Exception $e){
             return redirect()->back();
         }
