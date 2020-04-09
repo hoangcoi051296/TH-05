@@ -80,6 +80,7 @@ class AdminController extends Controller
     }
     public function categoryEdit($id){
         $category = Category::find($id);
+        dd($category);
         return view ("admin.category.edit",['category'=>$category]);
     }
     public function categoryUpdate($id,Request $request){
