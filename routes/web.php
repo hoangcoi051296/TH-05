@@ -39,7 +39,7 @@ Route::get("/cart","WebController@cart")->middleware("auth");
 Route::get("/clear-cart","WebController@clearCart")->middleware("auth");
 Route::get("/check-out","WebController@checkout")->middleware("auth");
 Route::post("/check-out","WebController@placeOrder")->middleware("auth");
-Route::get("checkout-success","WebController@checkoutSuccess") ->middleware("auth");
+Route::get("checkout-success","WebController@checkoutSuccess") ;
 Route::get("search",'WebController@getSearch');
 Route::get("listOrder",'WebController@getListOrder');
 
@@ -87,3 +87,7 @@ Route::get('/logout',function (){
 Route::get('/student','WebController@listStudent');
 Route::get('/student/create',"WebController@studentCreate");
 Route::post('/student/add',"WebController@studentAdd");
+
+
+Route::get('feedback',"WebController@feedback");
+Route::post("postFeedback","WebController@postFeedback");

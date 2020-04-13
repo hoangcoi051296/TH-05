@@ -16,6 +16,7 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Cache;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Mail;
+use Illuminate\Support\Facades\Validator;
 use mysql_xdevapi\Exception;
 
 class WebController extends Controller
@@ -267,9 +268,32 @@ class WebController extends Controller
         }
         return redirect()->to("/student");
     }
-    public function aaalistStudent(){
-        $student =Student::all();
-        return view("student.index",['student'=>$student]);
+
+
+    public function feedback(){
+        return view("feedback.index");
+    }
+    public function postFeedback(Request $request){
+        $validator = Validator::make($request->all(),[
+            "name" => 'required|name',
+            "email" => 'required|email',
+            "telephone" => 'required|telephone',
+            "feedback" => 'required|feedback'
+        ]);
+
+        if($validator->fails()){
+            return response()->json(["status"=>false,"message"=>$validator->errors()->first()]);
+        }
+        $name = $request->get("name");
+        $email = $request->get("email");
+        $telephone = $request->get("telephone");
+        $feedback = $request->get("feedback");
+        DB::table("feedback")->insert([
+            'name'=>$name,
+            'email'=>$email,
+            'telephone'=>$telephone,
+            'feedback'=>$feedback,
+        ]);
     }
 }
 
